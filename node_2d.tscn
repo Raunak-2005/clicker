@@ -1,11 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://0kgd4s5iyrq5"]
+[gd_scene load_steps=20 format=3 uid="uid://0kgd4s5iyrq5"]
 
+[ext_resource type="Script" uid="uid://dgxiu7ifv5ygb" path="res://node_2d.gd" id="1_rj586"]
 [ext_resource type="Texture2D" uid="uid://bac78f5qnv2gq" path="res://Assets/Clicker1 (1).png" id="1_wtcfe"]
 [ext_resource type="Texture2D" uid="uid://h7vxa6so74js" path="res://Assets/Clicker1 (2).png" id="2_0e48y"]
 [ext_resource type="Script" uid="uid://cmoy0glpi75nd" path="res://area_2d.gd" id="3_0hol4"]
 [ext_resource type="Script" uid="uid://c4yj7eatx7bv6" path="res://animated_sprite_2d.gd" id="3_q6r6c"]
 [ext_resource type="Script" uid="uid://dwjnvlsnm64an" path="res://collision_shape_2d.gd" id="4_q6r6c"]
 [ext_resource type="AudioStream" uid="uid://2dewmbrm1us6" path="res://Assets/button-press-3-386171_69xd9Yn0.mp3" id="6_kdubu"]
+[ext_resource type="FontFile" uid="uid://dkjky1udawmw0" path="res://Assets/ARCADECLASSIC.TTF" id="7_d21ai"]
+[ext_resource type="AudioStream" uid="uid://by33jxlgsq2h7" path="res://Assets/BeepBox-Song.wav" id="9_4d7sh"]
+[ext_resource type="Script" uid="uid://mrdaxw6wmew6" path="res://audio_stream_player_2d.gd" id="10_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://b1wkr76tv8t42" path="res://Assets/Crossing.png" id="11_hqns4"]
+[ext_resource type="Texture2D" uid="uid://b4kf2xd3hc4nd" path="res://Assets/Cursor-Sheet.png" id="12_x0ka3"]
+[ext_resource type="Texture2D" uid="uid://b5bxc6jlpn585" path="res://Assets/ex11.png" id="13_0h7mo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_epypp"]
 animations = [{
@@ -32,12 +39,48 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_kdubu"]
 radius = 20.5
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0h7mo"]
+atlas = ExtResource("12_x0ka3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nr8wp"]
+atlas = ExtResource("12_x0ka3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2bti"]
+atlas = ExtResource("12_x0ka3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ta5nu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0h7mo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nr8wp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2bti")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_rj586")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.964794, 0.945912, 1, 1)
 texture_filter = 3
-position = Vector2(566.5, 544.5)
-scale = Vector2(2.33, 2.33)
+position = Vector2(575, 514.438)
+scale = Vector2(2.2865, 2.27425)
 sprite_frames = SubResource("SpriteFrames_epypp")
 animation = &"new_animation"
 autoplay = "new_animation"
@@ -53,5 +96,37 @@ script = ExtResource("4_q6r6c")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AnimatedSprite2D"]
 stream = ExtResource("6_kdubu")
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 1, 0, 1)
+texture_filter = 3
+offset_left = 21.0
+offset_top = 5.0
+offset_right = 144.0
+offset_bottom = 57.0
+theme_override_fonts/font = ExtResource("7_d21ai")
+theme_override_font_sizes/font_size = 32
+text = "Counter"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_4d7sh")
+script = ExtResource("10_ir8iy")
+
+[node name="Crossing" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(605, 540)
+scale = Vector2(2.56787, 3.3125)
+texture = ExtResource("11_hqns4")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(-37, -13)
+sprite_frames = SubResource("SpriteFrames_ta5nu")
+
+[node name="Ex11" type="Sprite2D" parent="."]
+modulate = Color(1, 0.620464, 0.56818, 1)
+texture_filter = 3
+position = Vector2(999, 179)
+scale = Vector2(0.638, 0.862)
+texture = ExtResource("13_0h7mo")
 
 [connection signal="input_event" from="AnimatedSprite2D/Area2D" to="AnimatedSprite2D/Area2D" method="_on_input_event"]

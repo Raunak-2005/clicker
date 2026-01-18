@@ -14,6 +14,10 @@ config/name="Clicker"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+mouse_cursor/custom_image="uid://b4kf2xd3hc4nd"
+
 [input]
 
 ui_Mouse_left_Click={
