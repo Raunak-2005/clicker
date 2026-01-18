@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if (Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
+	if (Input.is_action_just_pressed("ui_Mouse_left_Click")):
 		get_parent().animation="default"
 		get_parent().play()
 		get_parent().get_node("AudioStreamPlayer2D").play() 
