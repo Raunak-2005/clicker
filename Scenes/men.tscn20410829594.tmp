@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://cgiy3xxgbsw7r"]
+
+[ext_resource type="Texture2D" uid="uid://bcryf3u1pl1nf" path="res://Assets/Green Guy-Sheet.png" id="1_8tl16"]
+[ext_resource type="Script" uid="uid://cts3im73pum7o" path="res://Scenes/walking.gd" id="2_4oc5y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4oc5y"]
+atlas = ExtResource("1_8tl16")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r58rf"]
+atlas = ExtResource("1_8tl16")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avxvs"]
+atlas = ExtResource("1_8tl16")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utkad"]
+atlas = ExtResource("1_8tl16")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vhdh5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4oc5y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r58rf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avxvs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utkad")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Men" type="Node2D"]
+script = ExtResource("2_4oc5y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(15, 15)
+sprite_frames = SubResource("SpriteFrames_vhdh5")
+animation = &"walk"

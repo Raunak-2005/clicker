@@ -1,27 +1,27 @@
 [gd_scene load_steps=20 format=3 uid="uid://0kgd4s5iyrq5"]
 
-[ext_resource type="Script" path="res://node_2d.gd" id="1_rj586"]
-[ext_resource type="Texture2D" uid="uid://bac78f5qnv2gq" path="res://Assets/Clicker1 (1).png" id="1_wtcfe"]
-[ext_resource type="Texture2D" uid="uid://h7vxa6so74js" path="res://Assets/Clicker1 (2).png" id="2_0e48y"]
-[ext_resource type="Script" uid="uid://cmoy0glpi75nd" path="res://area_2d.gd" id="3_0hol4"]
-[ext_resource type="Script" uid="uid://c4yj7eatx7bv6" path="res://animated_sprite_2d.gd" id="3_q6r6c"]
-[ext_resource type="Script" uid="uid://dwjnvlsnm64an" path="res://collision_shape_2d.gd" id="4_q6r6c"]
-[ext_resource type="AudioStream" uid="uid://2dewmbrm1us6" path="res://Assets/button-press-3-386171_69xd9Yn0.mp3" id="6_kdubu"]
-[ext_resource type="FontFile" uid="uid://dkjky1udawmw0" path="res://Assets/ARCADECLASSIC.TTF" id="7_d21ai"]
-[ext_resource type="AudioStream" uid="uid://by33jxlgsq2h7" path="res://Assets/BeepBox-Song.wav" id="9_4d7sh"]
-[ext_resource type="Script" path="res://audio_stream_player_2d.gd" id="10_ir8iy"]
-[ext_resource type="Texture2D" uid="uid://b1wkr76tv8t42" path="res://Assets/Crossing.png" id="11_hqns4"]
-[ext_resource type="Texture2D" uid="uid://b4kf2xd3hc4nd" path="res://Assets/Cursor-Sheet.png" id="12_x0ka3"]
-[ext_resource type="Texture2D" uid="uid://b5bxc6jlpn585" path="res://Assets/ex11.png" id="13_0h7mo"]
+[ext_resource type="Script" uid="uid://dgxiu7ifv5ygb" path="res://Scripts/node_2d.gd" id="1_he4j0"]
+[ext_resource type="Texture2D" uid="uid://h7vxa6so74js" path="res://Assets/Clicker1 (2).png" id="2_85gyg"]
+[ext_resource type="Texture2D" uid="uid://bac78f5qnv2gq" path="res://Assets/Clicker1 (1).png" id="3_c32x4"]
+[ext_resource type="Script" uid="uid://c4yj7eatx7bv6" path="res://Scripts/animated_sprite_2d.gd" id="4_fg7i4"]
+[ext_resource type="Script" uid="uid://cmoy0glpi75nd" path="res://Scripts/area_2d.gd" id="5_gwne5"]
+[ext_resource type="Script" uid="uid://dwjnvlsnm64an" path="res://Scripts/collision_shape_2d.gd" id="6_hpu6p"]
+[ext_resource type="AudioStream" uid="uid://2dewmbrm1us6" path="res://Assets/button-press-3-386171_69xd9Yn0.mp3" id="7_op2xg"]
+[ext_resource type="FontFile" uid="uid://dkjky1udawmw0" path="res://Assets/ARCADECLASSIC.TTF" id="8_1nvmp"]
+[ext_resource type="AudioStream" uid="uid://by33jxlgsq2h7" path="res://Assets/BeepBox-Song.wav" id="9_el1jj"]
+[ext_resource type="Script" uid="uid://mrdaxw6wmew6" path="res://Scripts/audio_stream_player_2d.gd" id="10_03fgm"]
+[ext_resource type="Texture2D" uid="uid://b1wkr76tv8t42" path="res://Assets/Crossing.png" id="11_uu23e"]
+[ext_resource type="Texture2D" uid="uid://b4kf2xd3hc4nd" path="res://Assets/Cursor-Sheet.png" id="12_ny2ev"]
+[ext_resource type="Texture2D" uid="uid://b5bxc6jlpn585" path="res://Assets/ex11.png" id="13_jiy1d"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_epypp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_0e48y")
+"texture": ExtResource("2_85gyg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_wtcfe")
+"texture": ExtResource("3_c32x4")
 }],
 "loop": false,
 "name": &"default",
@@ -29,7 +29,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_wtcfe")
+"texture": ExtResource("3_c32x4")
 }],
 "loop": true,
 "name": &"new_animation",
@@ -40,15 +40,15 @@ animations = [{
 radius = 20.1181
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0h7mo"]
-atlas = ExtResource("12_x0ka3")
+atlas = ExtResource("12_ny2ev")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nr8wp"]
-atlas = ExtResource("12_x0ka3")
+atlas = ExtResource("12_ny2ev")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d2bti"]
-atlas = ExtResource("12_x0ka3")
+atlas = ExtResource("12_ny2ev")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ta5nu"]
@@ -74,28 +74,37 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_rj586")
+position = Vector2(-200, 0)
+script = ExtResource("1_he4j0")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 86.0
+offset_top = 478.0
+offset_right = 198.0
+offset_bottom = 848.0
+color = Color(0, 1, 0, 0.345098)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.964794, 0.945912, 1, 1)
+z_index = -100
 texture_filter = 3
 position = Vector2(575, 514.438)
 scale = Vector2(2.2865, 2.27425)
 sprite_frames = SubResource("SpriteFrames_epypp")
 animation = &"new_animation"
 autoplay = "new_animation"
-script = ExtResource("3_q6r6c")
+script = ExtResource("4_fg7i4")
 
 [node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
-script = ExtResource("3_0hol4")
+script = ExtResource("5_gwne5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
 position = Vector2(10.9337, -118.473)
 shape = SubResource("CircleShape2D_kdubu")
-script = ExtResource("4_q6r6c")
+script = ExtResource("6_hpu6p")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AnimatedSprite2D"]
-stream = ExtResource("6_kdubu")
+stream = ExtResource("7_op2xg")
 
 [node name="Label" type="Label" parent="."]
 modulate = Color(1, 1, 0, 1)
@@ -104,19 +113,19 @@ offset_left = 21.0
 offset_top = 5.0
 offset_right = 144.0
 offset_bottom = 57.0
-theme_override_fonts/font = ExtResource("7_d21ai")
+theme_override_fonts/font = ExtResource("8_1nvmp")
 theme_override_font_sizes/font_size = 32
 text = "Counter"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_4d7sh")
-script = ExtResource("10_ir8iy")
+stream = ExtResource("9_el1jj")
+script = ExtResource("10_03fgm")
 
 [node name="Crossing" type="Sprite2D" parent="."]
 texture_filter = 3
-position = Vector2(608, 584)
-scale = Vector2(2.56787, 3.3125)
-texture = ExtResource("11_hqns4")
+position = Vector2(625, 664.902)
+scale = Vector2(6.60937, 5.78432)
+texture = ExtResource("11_uu23e")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 position = Vector2(-37, -13)
@@ -127,6 +136,6 @@ modulate = Color(1, 0.620464, 0.56818, 1)
 texture_filter = 3
 position = Vector2(999, 179)
 scale = Vector2(0.638, 0.862)
-texture = ExtResource("13_0h7mo")
+texture = ExtResource("13_jiy1d")
 
 [connection signal="input_event" from="AnimatedSprite2D/Area2D" to="AnimatedSprite2D/Area2D" method="_on_input_event"]

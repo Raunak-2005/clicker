@@ -16,6 +16,8 @@ config/icon="res://icon.svg"
 
 [display]
 
+window/size/viewport_width=850
+window/size/viewport_height=850
 mouse_cursor/custom_image="uid://b4kf2xd3hc4nd"
 
 [input]
