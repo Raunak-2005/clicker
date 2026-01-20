@@ -77,13 +77,6 @@ animations = [{
 position = Vector2(-200, 0)
 script = ExtResource("1_he4j0")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 86.0
-offset_top = 478.0
-offset_right = 198.0
-offset_bottom = 848.0
-color = Color(0, 1, 0, 0.345098)
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.964794, 0.945912, 1, 1)
 z_index = -100
