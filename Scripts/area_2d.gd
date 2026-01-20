@@ -20,6 +20,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		get_parent().animation="default"
 		get_parent().play()
 		get_parent().get_node("AudioStreamPlayer2D").play() 
+		get_parent().get_parent().get_node("Timer").startcountdown()
 		var dude = guy.instantiate()
 		var randx = randf_range(-250,-150)
 		var randy = randf_range(50,130)
