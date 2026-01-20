@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cgiy3xxgbsw7r"]
 
 [ext_resource type="Texture2D" uid="uid://bcryf3u1pl1nf" path="res://Assets/Green Guy-Sheet.png" id="1_8tl16"]
-[ext_resource type="Script" uid="uid://cts3im73pum7o" path="res://Scenes/walking.gd" id="2_4oc5y"]
+[ext_resource type="Script" uid="uid://cts3im73pum7o" path="res://Scripts/walking.gd" id="2_4oc5y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4oc5y"]
 atlas = ExtResource("1_8tl16")
