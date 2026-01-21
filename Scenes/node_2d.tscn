@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://0kgd4s5iyrq5"]
+[gd_scene load_steps=22 format=3 uid="uid://0kgd4s5iyrq5"]
 
 [ext_resource type="Script" uid="uid://dgxiu7ifv5ygb" path="res://Scripts/node_2d.gd" id="1_he4j0"]
 [ext_resource type="Texture2D" uid="uid://h7vxa6so74js" path="res://Assets/Clicker1 (2).png" id="2_85gyg"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b4kf2xd3hc4nd" path="res://Assets/Cursor-Sheet.png" id="12_ny2ev"]
 [ext_resource type="Texture2D" uid="uid://b5bxc6jlpn585" path="res://Assets/ex11.png" id="13_jiy1d"]
 [ext_resource type="Script" uid="uid://bsmw0t72btxyu" path="res://Scripts/timer.gd" id="14_85gyg"]
+[ext_resource type="Script" uid="uid://d1ale4lmmy5b" path="res://Scripts/car_controller.gd" id="15_c32x4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_epypp"]
 animations = [{
@@ -80,7 +81,7 @@ script = ExtResource("1_he4j0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.964794, 0.945912, 1, 1)
-z_index = -100
+z_index = 70
 texture_filter = 3
 position = Vector2(575, 514.438)
 scale = Vector2(2.2865, 2.27425)
@@ -155,5 +156,8 @@ offset_bottom = 63.0
 theme_override_fonts/font = ExtResource("8_1nvmp")
 theme_override_font_sizes/font_size = 64
 text = "1"
+
+[node name="Car Controller" type="Node2D" parent="."]
+script = ExtResource("15_c32x4")
 
 [connection signal="input_event" from="AnimatedSprite2D/Area2D" to="AnimatedSprite2D/Area2D" method="_on_input_event"]

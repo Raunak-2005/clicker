@@ -7,7 +7,7 @@ const guy = preload("res://Scenes/men.tscn")
 func _ready() -> void:
 	texture = preload("res://Assets/Cursor-Sheet.png")
 	texture1 = preload("res://Assets/Cursor-Sheet1.png")
-	to=false
+	to=false 
 	pass # Replace with function body.
 
 
@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if (Input.is_action_just_pressed("ui_Mouse_left_Click") && (get_parent().get_parent().get_node("Timer").t.time_left==0 or to)):
+	if (Input.is_action_just_pressed("ui_Mouse_left_Click") && (get_parent().get_parent().get_node("Timer").t.time_left==0 || to)):
 		get_parent().animation="default"
 		get_parent().play()
 		get_parent().get_node("AudioStreamPlayer2D").play() 
