@@ -14,7 +14,7 @@ func walk_start():
 	animated_sprite_2d.play('walk')
 	is_walking = true
 	check = true
-	target = position.x + 1000
+	target = position.x + 500
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -6,12 +6,12 @@ var n1
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	t=Timer.new()
-	tl=5
+	
 	add_child(t)
 	pass # Replace with function body.
 func startcountdown():
 	get_parent().get_node("ColorRect").visible=true
-	t.start(tl)
+	t.start(get_parent().tl)
 	await(t.timeout)
 	get_parent().get_node("ColorRect").visible=false
 	t.stop()
