@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqw3tkjoxm1a"]
+
+[ext_resource type="Script" uid="uid://b7ltiu62gs1fj" path="res://vip.gd" id="1_vxg4a"]
+[ext_resource type="PackedScene" uid="uid://cgiy3xxgbsw7r" path="res://Scenes/men.tscn" id="2_j7ttp"]
+
+[node name="VIP" type="Node2D"]
+script = ExtResource("1_vxg4a")
+
+[node name="Men" parent="." instance=ExtResource("2_j7ttp")]
+position = Vector2(-15, 16)
+
+[node name="Men2" parent="." instance=ExtResource("2_j7ttp")]
+position = Vector2(14, -9)
+
+[node name="Men3" parent="." instance=ExtResource("2_j7ttp")]
+position = Vector2(-15, -36)
