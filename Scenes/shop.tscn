@@ -57,18 +57,21 @@ texture = ExtResource("4_5xp22")
 [node name="Label2" type="Label" parent="Item1"]
 z_index = 1
 texture_filter = 1
-offset_left = 166.614
-offset_top = 16.967
-offset_right = 342.614
-offset_bottom = 81.967
-scale = Vector2(2.44178, 1.74243)
+layout_mode = 0
+offset_left = 164.544
+offset_top = 7.27157
+offset_right = 555.544
+offset_bottom = 123.272
 theme_override_fonts/font = ExtResource("1_ymrm4")
-theme_override_font_sizes/font_size = 64
-text = "HELLO"
+theme_override_font_sizes/font_size = 32
+text = "Just A Guy:
+Pushes the button for you 
+every 5 seconds"
 
 [node name="Button" type="Button" parent="Item1"]
 z_index = 1
 texture_filter = 1
+layout_mode = 0
 offset_left = 627.132
 offset_top = 8.48354
 offset_right = 824.132
@@ -83,7 +86,6 @@ icon_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Item1/Area2D"]
 position = Vector2(419.25, 72.1098)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1cyt5")
 
 [node name="Item2" type="ColorRect" parent="."]
@@ -110,18 +112,21 @@ texture = ExtResource("5_ow1eo")
 [node name="Label2" type="Label" parent="Item2"]
 z_index = 1
 texture_filter = 1
-offset_left = 166.614
-offset_top = 16.967
-offset_right = 342.614
-offset_bottom = 81.967
-scale = Vector2(2.44178, 1.74243)
+layout_mode = 0
+offset_left = 165.579
+offset_top = 7.27157
+offset_right = 582.579
+offset_bottom = 123.272
 theme_override_fonts/font = ExtResource("1_ymrm4")
-theme_override_font_sizes/font_size = 64
-text = "HELLO"
+theme_override_font_sizes/font_size = 32
+text = "Tr a ffic  Po lice:
+increases number of people
+crossing per press"
 
 [node name="Button" type="Button" parent="Item2"]
 z_index = 1
 texture_filter = 1
+layout_mode = 0
 offset_left = 627.132
 offset_top = 8.48354
 offset_right = 824.132
@@ -136,7 +141,6 @@ icon_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Item2/Area2D"]
 position = Vector2(419.64, 72.1098)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1cyt5")
 
 [node name="ConePortrait" type="Sprite2D" parent="."]
@@ -170,18 +174,21 @@ texture = ExtResource("6_k6pkm")
 [node name="Label2" type="Label" parent="Item3"]
 z_index = 1
 texture_filter = 1
-offset_left = 166.614
-offset_top = 16.967
-offset_right = 342.614
-offset_bottom = 81.967
-scale = Vector2(2.44178, 1.74243)
+layout_mode = 0
+offset_left = 167.649
+offset_top = 1.21192
+offset_right = 517.649
+offset_bottom = 117.212
 theme_override_fonts/font = ExtResource("1_ymrm4")
-theme_override_font_sizes/font_size = 64
-text = "HELLO"
+theme_override_font_sizes/font_size = 32
+text = "Dog:
+increases the speed of 
+people crossing"
 
 [node name="Button" type="Button" parent="Item3"]
 z_index = 1
 texture_filter = 1
+layout_mode = 0
 offset_left = 627.132
 offset_top = 8.48354
 offset_right = 824.132
@@ -196,7 +203,6 @@ icon_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Item3/Area2D"]
 position = Vector2(419.64, 72.1098)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1cyt5")
 
 [node name="Item4" type="ColorRect" parent="."]
@@ -223,18 +229,21 @@ texture = ExtResource("3_tyrku")
 [node name="Label2" type="Label" parent="Item4"]
 z_index = 1
 texture_filter = 1
-offset_left = 166.614
-offset_top = 16.967
-offset_right = 342.614
-offset_bottom = 81.967
-scale = Vector2(2.44178, 1.74243)
+layout_mode = 0
+offset_left = 165.579
+offset_top = 1.21192
+offset_right = 463.579
+offset_bottom = 117.212
 theme_override_fonts/font = ExtResource("1_ymrm4")
-theme_override_font_sizes/font_size = 64
-text = "HELLO"
+theme_override_font_sizes/font_size = 32
+text = "VIP:
+counts as th ree
+appears at a  chance"
 
 [node name="Button" type="Button" parent="Item4"]
 z_index = 1
 texture_filter = 1
+layout_mode = 0
 offset_left = 627.132
 offset_top = 8.48354
 offset_right = 824.132
@@ -249,7 +258,6 @@ icon_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Item4/Area2D"]
 position = Vector2(419.64, 72.1098)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1cyt5")
 
 [node name="Item5" type="ColorRect" parent="."]
@@ -269,18 +277,21 @@ texture = ExtResource("3_5xp22")
 [node name="Label2" type="Label" parent="Item5"]
 z_index = 1
 texture_filter = 1
-offset_left = 166.614
-offset_top = 16.967
-offset_right = 342.614
-offset_bottom = 81.967
-scale = Vector2(2.44178, 1.74243)
+layout_mode = 0
+offset_left = 165.579
+offset_top = 4.84771
+offset_right = 373.579
+offset_bottom = 84.8477
 theme_override_fonts/font = ExtResource("1_ymrm4")
-theme_override_font_sizes/font_size = 64
-text = "HELLO"
+theme_override_font_sizes/font_size = 32
+text = "Traffic  cone:
+decrease  ti m e  after each 
+button press"
 
 [node name="Button" type="Button" parent="Item5"]
 z_index = 1
 texture_filter = 1
+layout_mode = 0
 offset_left = 627.132
 offset_top = 8.48354
 offset_right = 824.132
@@ -295,5 +306,4 @@ icon_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Item5/Area2D"]
 position = Vector2(419.64, 72.1098)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1cyt5")

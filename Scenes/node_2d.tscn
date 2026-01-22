@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b4kf2xd3hc4nd" path="res://Assets/Cursor-Sheet.png" id="12_ny2ev"]
 [ext_resource type="Texture2D" uid="uid://b5bxc6jlpn585" path="res://Assets/ex11.png" id="13_jiy1d"]
 [ext_resource type="Script" uid="uid://bsmw0t72btxyu" path="res://Scripts/timer.gd" id="14_85gyg"]
-[ext_resource type="Script" uid="uid://d1ale4lmmy5b" path="res://Scripts/car_controller.gd" id="15_c32x4"]
+[ext_resource type="Script" path="res://Scripts/car_controller.gd" id="15_c32x4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_epypp"]
 animations = [{
