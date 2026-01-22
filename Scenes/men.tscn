@@ -1,7 +1,24 @@
-[gd_scene load_steps=8 format=3 uid="uid://cgiy3xxgbsw7r"]
+[gd_scene load_steps=13 format=3 uid="uid://cgiy3xxgbsw7r"]
 
 [ext_resource type="Texture2D" uid="uid://bcryf3u1pl1nf" path="res://Assets/Green Guy-Sheet.png" id="1_8tl16"]
 [ext_resource type="Script" uid="uid://cts3im73pum7o" path="res://Scripts/walking.gd" id="2_4oc5y"]
+[ext_resource type="Texture2D" uid="uid://c80na3aaljwb8" path="res://Assets/Bodyguard Top Down-Sheet.png" id="2_r58rf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhdh5"]
+atlas = ExtResource("2_r58rf")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fc2xy"]
+atlas = ExtResource("2_r58rf")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2qk0"]
+atlas = ExtResource("2_r58rf")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cysp5"]
+atlas = ExtResource("2_r58rf")
+region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4oc5y"]
 atlas = ExtResource("1_8tl16")
@@ -21,6 +38,23 @@ region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vhdh5"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhdh5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fc2xy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2qk0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cysp5")
+}],
+"loop": true,
+"name": &"bodyguard_walk",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4oc5y")
@@ -48,5 +82,3 @@ texture_filter = 1
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_vhdh5")
 animation = &"walk"
-frame = 3
-frame_progress = 0.489755

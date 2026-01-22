@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cblg8vormvvqe"]
+[gd_scene load_steps=12 format=3 uid="uid://cblg8vormvvqe"]
 
 [ext_resource type="Texture2D" uid="uid://cq1syb7b1h1on" path="res://Assets/ShopBG.png" id="1_s8dlv"]
 [ext_resource type="Script" uid="uid://ct1hvt2xnx1ev" path="res://Scripts/shop.gd" id="1_tyrku"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b16m8bf7haj1m" path="res://Assets/Traffic Officer Portrait.png" id="5_ow1eo"]
 [ext_resource type="Texture2D" uid="uid://b18atsk7bgor" path="res://Assets/Dog Portrait.png" id="6_k6pkm"]
 [ext_resource type="Texture2D" uid="uid://dvh1xulekaiyc" path="res://Assets/Cone Portrait.png" id="7_1sjcd"]
+[ext_resource type="AudioStream" uid="uid://2dewmbrm1us6" path="res://Assets/button-press-3-386171_69xd9Yn0.mp3" id="10_5xp22"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1cyt5"]
 size = Vector2(839.28, 144.22)
@@ -23,7 +24,7 @@ position = Vector2(425.5, 425.5)
 scale = Vector2(3.32422, 3.32422)
 texture = ExtResource("1_s8dlv")
 
-[node name="Label" type="Label" parent="."]
+[node name="Shop" type="Label" parent="."]
 offset_left = 260.0
 offset_top = 1.0
 offset_right = 579.0
@@ -41,6 +42,7 @@ offset_top = 115.0
 offset_right = 844.0
 offset_bottom = 259.0
 scale = Vector2(0.966304, 0.825131)
+color = Color(0.662745, 0.631373, 0.678431, 1)
 
 [node name="Border" type="Sprite2D" parent="Item1"]
 z_index = 1
@@ -65,8 +67,10 @@ offset_top = 17.0
 offset_right = 610.0
 offset_bottom = 133.0
 theme_override_fonts/font = ExtResource("1_ymrm4")
-theme_override_font_sizes/font_size = 128
-text = "h e lp"
+theme_override_font_sizes/font_size = 32
+text = "Traffic  Guy:
+Pushes the button for you 
+every 5 seconds"
 
 [node name="Button" type="Button" parent="Item1"]
 z_index = 1
@@ -79,7 +83,8 @@ offset_bottom = 70.4835
 scale = Vector2(1.05113, 1.99664)
 theme_override_fonts/font = ExtResource("1_ymrm4")
 theme_override_font_sizes/font_size = 18
-text = "BUY"
+text = "buy
+‎cost: 10 "
 icon_alignment = 1
 
 [node name="Area2D" type="Area2D" parent="Item1"]
@@ -94,6 +99,7 @@ offset_top = 263.0
 offset_right = 846.0
 offset_bottom = 407.0
 scale = Vector2(0.966304, 0.825131)
+color = Color(0.662745, 0.631373, 0.678431, 1)
 
 [node name="Border" type="Sprite2D" parent="Item2"]
 z_index = 1
@@ -117,10 +123,11 @@ offset_left = 166.614
 offset_top = 16.967
 offset_right = 342.614
 offset_bottom = 81.967
-scale = Vector2(2.44178, 1.74243)
 theme_override_fonts/font = ExtResource("1_ymrm4")
-theme_override_font_sizes/font_size = 64
-text = "HELLO"
+theme_override_font_sizes/font_size = 32
+text = "Crossing guard:
+increases number of people
+crossing per press"
 
 [node name="Button" type="Button" parent="Item2"]
 z_index = 1
@@ -133,7 +140,8 @@ offset_bottom = 70.4835
 scale = Vector2(1.05113, 1.99664)
 theme_override_fonts/font = ExtResource("1_ymrm4")
 theme_override_font_sizes/font_size = 18
-text = "BUY"
+text = "BUY
+cost: 10"
 icon_alignment = 1
 
 [node name="Area2D" type="Area2D" parent="Item2"]
@@ -142,19 +150,13 @@ icon_alignment = 1
 position = Vector2(421.193, 76.3515)
 shape = SubResource("RectangleShape2D_1cyt5")
 
-[node name="ConePortrait" type="Sprite2D" parent="."]
-z_index = 2
-texture_filter = 1
-position = Vector2(82.9999, 761)
-scale = Vector2(3.5, 3.5)
-texture = ExtResource("7_1sjcd")
-
 [node name="Item3" type="ColorRect" parent="."]
 offset_left = 7.0
 offset_top = 413.0
 offset_right = 846.0
 offset_bottom = 557.0
 scale = Vector2(0.966304, 0.825131)
+color = Color(0.662745, 0.631373, 0.678431, 1)
 
 [node name="Border" type="Sprite2D" parent="Item3"]
 z_index = 1
@@ -178,10 +180,11 @@ offset_left = 166.614
 offset_top = 16.967
 offset_right = 342.614
 offset_bottom = 81.967
-scale = Vector2(2.44178, 1.74243)
 theme_override_fonts/font = ExtResource("1_ymrm4")
-theme_override_font_sizes/font_size = 64
-text = "HELLO"
+theme_override_font_sizes/font_size = 32
+text = "Dog:
+increases the speed of 
+people crossing"
 
 [node name="Button" type="Button" parent="Item3"]
 z_index = 1
@@ -194,7 +197,8 @@ offset_bottom = 70.4835
 scale = Vector2(1.05113, 1.99664)
 theme_override_fonts/font = ExtResource("1_ymrm4")
 theme_override_font_sizes/font_size = 18
-text = "BUY"
+text = "BUY
+cost: 5"
 icon_alignment = 1
 
 [node name="Area2D" type="Area2D" parent="Item3"]
@@ -209,6 +213,7 @@ offset_top = 557.0
 offset_right = 847.0
 offset_bottom = 701.0
 scale = Vector2(0.966304, 0.825131)
+color = Color(0.662745, 0.631373, 0.678431, 1)
 
 [node name="Border" type="Sprite2D" parent="Item4"]
 z_index = 1
@@ -229,13 +234,14 @@ z_index = 1
 texture_filter = 1
 layout_mode = 0
 offset_left = 166.614
-offset_top = 16.967
-offset_right = 342.614
-offset_bottom = 81.967
-scale = Vector2(2.44178, 1.74243)
+offset_top = 10.9074
+offset_right = 464.614
+offset_bottom = 137.907
 theme_override_fonts/font = ExtResource("1_ymrm4")
-theme_override_font_sizes/font_size = 64
-text = "HELLO"
+theme_override_font_sizes/font_size = 32
+text = "VIP:
+counts  as   th ree,
+appears at a  chance"
 
 [node name="Button" type="Button" parent="Item4"]
 z_index = 1
@@ -248,7 +254,8 @@ offset_bottom = 70.4835
 scale = Vector2(1.05113, 1.99664)
 theme_override_fonts/font = ExtResource("1_ymrm4")
 theme_override_font_sizes/font_size = 18
-text = "BUY"
+text = "BUY
+cost:15"
 icon_alignment = 1
 
 [node name="Area2D" type="Area2D" parent="Item4"]
@@ -263,6 +270,7 @@ offset_top = 701.0
 offset_right = 848.0
 offset_bottom = 845.0
 scale = Vector2(0.966304, 0.825131)
+color = Color(0.662745, 0.631373, 0.678431, 1)
 
 [node name="Border" type="Sprite2D" parent="Item5"]
 z_index = 1
@@ -270,6 +278,13 @@ texture_filter = 1
 position = Vector2(77.6153, 71.5039)
 scale = Vector2(9, 9)
 texture = ExtResource("3_5xp22")
+
+[node name="ConePortrait" type="Sprite2D" parent="Item5/Border"]
+z_index = 2
+texture_filter = 1
+position = Vector2(-0.114994, 0.134651)
+scale = Vector2(0.40245, 0.471306)
+texture = ExtResource("7_1sjcd")
 
 [node name="Label2" type="Label" parent="Item5"]
 z_index = 1
@@ -279,10 +294,11 @@ offset_left = 166.614
 offset_top = 16.967
 offset_right = 342.614
 offset_bottom = 81.967
-scale = Vector2(2.44178, 1.74243)
 theme_override_fonts/font = ExtResource("1_ymrm4")
-theme_override_font_sizes/font_size = 64
-text = "HELLO"
+theme_override_font_sizes/font_size = 32
+text = "Traffic  cone:
+decrease  ti m e  after each 
+button press"
 
 [node name="Button" type="Button" parent="Item5"]
 z_index = 1
@@ -295,7 +311,8 @@ offset_bottom = 70.4835
 scale = Vector2(1.05113, 1.99664)
 theme_override_fonts/font = ExtResource("1_ymrm4")
 theme_override_font_sizes/font_size = 18
-text = "BUY"
+text = "BUY
+cost: 20"
 icon_alignment = 1
 
 [node name="Area2D" type="Area2D" parent="Item5"]
@@ -304,7 +321,12 @@ icon_alignment = 1
 position = Vector2(419.64, 72.1098)
 shape = SubResource("RectangleShape2D_1cyt5")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(4, 0)
+stream = ExtResource("10_5xp22")
+
 [connection signal="pressed" from="Item1/Button" to="." method="_on_button_pressed3"]
 [connection signal="pressed" from="Item2/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Item3/Button" to="." method="_on_button_pressed4"]
+[connection signal="pressed" from="Item4/Button" to="." method="_on_button_pressed5"]
 [connection signal="pressed" from="Item5/Button" to="." method="_on_button_pressed2"]
