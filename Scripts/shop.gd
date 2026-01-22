@@ -26,7 +26,7 @@ func _on_button_pressed() -> void:
 	if get_parent().get_node('.').count >= costpolice:
 		get_parent().get_node("AnimatedSprite2D/Area2D").no+=1
 		get_parent().get_node('.').count -=costpolice
-		costpolice=int(costpolice*1.5)
+		costpolice=int(costpolice*1.3)
 		button2.text = 'BUY\ncost:'+str(costpolice)
 		get_parent().get_node("AnimatedSprite2D3").visible = true
 		play_audio()
@@ -37,7 +37,7 @@ func _on_button_pressed2 () -> void:
 	if get_parent().get_node('.').count >= costcone:
 		get_parent().get_node(".").tl*=0.85
 		get_parent().get_node('.').count -=costcone
-		costcone*=3
+		costcone*=2
 		button5.text = 'BUY\ncost:'+str(costcone)
 		play_audio()
 	pass # Replace with function body.
@@ -49,7 +49,7 @@ func _on_button_pressed3() -> void:
 		get_parent().get_node(".").autot*=0.9
 		get_parent().get_node('TheGuyHand').visible = true
 		get_parent().get_node('.').count -=costguy
-		costguy*=2
+		costguy=(costguy*1.8)
 		button1.text = 'BUY\ncost:'+str(costguy)
 		play_audio()
 	pass # Replace with function body.
@@ -69,7 +69,7 @@ func _on_button_pressed5() -> void:
 	if get_parent().get_node('.').count >= costvip:
 		get_parent().get_node("AnimatedSprite2D/Area2D").pcent*=1.5
 		get_parent().get_node('.').count -=costvip
-		costvip *=2
+		costvip =int(costvip*1.8)
 		button4.text = 'BUY\ncost:'+str(costvip)
 		play_audio()
 	pass # Replace with function body.
