@@ -16,7 +16,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var texty="Counter:"+ str(count)
+	var texty="Counter "+ str(count)
 	get_node("Main_Counter").text=texty
 	get_node("ShopCounter").text= texty
 	if auto==true && act==false:
