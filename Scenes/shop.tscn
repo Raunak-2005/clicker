@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cblg8vormvvqe"]
+[gd_scene load_steps=10 format=3 uid="uid://cblg8vormvvqe"]
 
+[ext_resource type="Texture2D" uid="uid://cq1syb7b1h1on" path="res://Assets/ShopBG.png" id="1_s8dlv"]
 [ext_resource type="FontFile" uid="uid://dkjky1udawmw0" path="res://Assets/ARCADECLASSIC.TTF" id="1_ymrm4"]
-[ext_resource type="Texture2D" uid="uid://kcfkat22mhfe" path="res://Assets/gradient.jpg" id="2_s8dlv"]
+[ext_resource type="Texture2D" uid="uid://bkem036u7ripw" path="res://Assets/Border.png" id="3_5xp22"]
 [ext_resource type="Texture2D" uid="uid://cdjd1ysfwmxo5" path="res://Assets/VIP Portrait.png" id="3_tyrku"]
 [ext_resource type="Texture2D" uid="uid://dy8c2ehdf7tum" path="res://Assets/The Guy Portrait.png" id="4_5xp22"]
 [ext_resource type="Texture2D" uid="uid://b16m8bf7haj1m" path="res://Assets/Traffic Officer Portrait.png" id="5_ow1eo"]
@@ -9,232 +10,290 @@
 [ext_resource type="Texture2D" uid="uid://dvh1xulekaiyc" path="res://Assets/Cone Portrait.png" id="7_1sjcd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1cyt5"]
-size = Vector2(839, 137)
+size = Vector2(839.28, 144.22)
 
 [node name="Shop" type="Node2D"]
 
-[node name="Label3" type="Label" parent="."]
-z_index = 1
+[node name="ShopBg" type="Sprite2D" parent="."]
+z_index = -1
 texture_filter = 1
-offset_left = 174.0
-offset_top = 265.0
-offset_right = 350.0
-offset_bottom = 330.0
-scale = Vector2(0.981865, 1.29778)
-theme_override_fonts/font = ExtResource("1_ymrm4")
-theme_override_font_sizes/font_size = 64
-text = "HELLO"
-
-[node name="Label2" type="Label" parent="."]
-z_index = 1
-texture_filter = 1
-offset_left = 164.0
-offset_top = 130.0
-offset_right = 340.0
-offset_bottom = 195.0
-scale = Vector2(2.44178, 1.74243)
-theme_override_fonts/font = ExtResource("1_ymrm4")
-theme_override_font_sizes/font_size = 64
-text = "HELLO"
-
-[node name="Gradient" type="Sprite2D" parent="."]
-position = Vector2(432.5, 428.5)
-scale = Vector2(1.16536, 2.04861)
-texture = ExtResource("2_s8dlv")
-
-[node name="Button3" type="Button" parent="Gradient"]
-z_index = 1
-texture_filter = 1
-offset_left = 152.313
-offset_top = -76.3932
-offset_right = 349.313
-offset_bottom = -14.3932
-theme_override_fonts/font = ExtResource("1_ymrm4")
-theme_override_font_sizes/font_size = 18
-text = "BUY"
-icon_alignment = 1
-
-[node name="Button4" type="Button" parent="Gradient"]
-z_index = 1
-texture_filter = 1
-offset_left = 152.313
-offset_top = -2.1966
-offset_right = 349.313
-offset_bottom = 59.8034
-theme_override_fonts/font = ExtResource("1_ymrm4")
-theme_override_font_sizes/font_size = 18
-text = "BUY"
-icon_alignment = 1
-
-[node name="Button5" type="Button" parent="Gradient"]
-z_index = 1
-texture_filter = 1
-offset_left = 152.313
-offset_top = 147.661
-offset_right = 349.313
-offset_bottom = 209.661
-theme_override_fonts/font = ExtResource("1_ymrm4")
-theme_override_font_sizes/font_size = 18
-text = "BUY"
-icon_alignment = 1
-
-[node name="Button2" type="Button" parent="Gradient"]
-z_index = 1
-texture_filter = 1
-offset_left = 151.455
-offset_top = 72.9763
-offset_right = 348.455
-offset_bottom = 134.976
-theme_override_fonts/font = ExtResource("1_ymrm4")
-theme_override_font_sizes/font_size = 18
-text = "BUY"
-icon_alignment = 1
-
-[node name="Button" type="Button" parent="Gradient"]
-z_index = 1
-texture_filter = 1
-offset_left = 153.0
-offset_top = -150.0
-offset_right = 350.0
-offset_bottom = -88.0
-theme_override_fonts/font = ExtResource("1_ymrm4")
-theme_override_font_sizes/font_size = 18
-text = "BUY"
-icon_alignment = 1
+position = Vector2(425.5, 425.5)
+scale = Vector2(3.32422, 3.32422)
+texture = ExtResource("1_s8dlv")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 266.0
+offset_left = 260.0
 offset_top = 1.0
-offset_right = 585.0
+offset_right = 579.0
 offset_bottom = 80.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_ymrm4")
 theme_override_font_sizes/font_size = 64
 text = "SHOP"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 6.0
-offset_top = 116.0
-offset_right = 845.0
-offset_bottom = 253.0
+[node name="Item1" type="ColorRect" parent="."]
+offset_left = 5.0
+offset_top = 115.0
+offset_right = 844.0
+offset_bottom = 259.0
+scale = Vector2(0.966304, 0.825131)
 
-[node name="Area2D" type="Area2D" parent="ColorRect"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/Area2D"]
-position = Vector2(419.5, 68.5)
-shape = SubResource("RectangleShape2D_1cyt5")
-
-[node name="ColorRect5" type="ColorRect" parent="."]
-offset_left = 6.0
-offset_top = 727.0
-offset_right = 845.0
-offset_bottom = 864.0
-
-[node name="Area2D" type="Area2D" parent="ColorRect5"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect5/Area2D"]
-position = Vector2(419.5, 68.5)
-shape = SubResource("RectangleShape2D_1cyt5")
-
-[node name="ColorRect4" type="ColorRect" parent="."]
-offset_left = 6.0
-offset_top = 573.0
-offset_right = 845.0
-offset_bottom = 710.0
-
-[node name="Area2D" type="Area2D" parent="ColorRect4"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect4/Area2D"]
-position = Vector2(419.5, 68.5)
-shape = SubResource("RectangleShape2D_1cyt5")
-
-[node name="ColorRect3" type="ColorRect" parent="."]
-offset_left = 6.0
-offset_top = 420.0
-offset_right = 845.0
-offset_bottom = 557.0
-
-[node name="Area2D" type="Area2D" parent="ColorRect3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect3/Area2D"]
-position = Vector2(419.5, 68.5)
-shape = SubResource("RectangleShape2D_1cyt5")
-
-[node name="ColorRect2" type="ColorRect" parent="."]
-offset_left = 6.0
-offset_top = 267.0
-offset_right = 845.0
-offset_bottom = 404.0
-
-[node name="Area2D" type="Area2D" parent="ColorRect2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect2/Area2D"]
-position = Vector2(419.5, 68.5)
-shape = SubResource("RectangleShape2D_1cyt5")
-
-[node name="VipPortrait" type="Sprite2D" parent="."]
+[node name="Border" type="Sprite2D" parent="Item1"]
+z_index = 1
 texture_filter = 1
-position = Vector2(78.25, 487.75)
-scale = Vector2(4.10938, 3.95312)
-texture = ExtResource("3_tyrku")
+position = Vector2(77.6153, 71.5039)
+scale = Vector2(9, 9)
+texture = ExtResource("3_5xp22")
 
-[node name="TheGuyPortrait" type="Sprite2D" parent="."]
+[node name="TheGuyPortrait" type="Sprite2D" parent="Item1/Border"]
+z_index = 2
 texture_filter = 1
-position = Vector2(76, 178)
-scale = Vector2(5.60938, 4.34375)
+position = Vector2(-0.574927, -0.942612)
+scale = Vector2(0.555556, 0.5)
 texture = ExtResource("4_5xp22")
 
-[node name="TrafficOfficerPortrait" type="Sprite2D" parent="."]
+[node name="Label2" type="Label" parent="Item1"]
+z_index = 1
 texture_filter = 1
-position = Vector2(78, 335)
-scale = Vector2(5.66406, 4.23437)
+offset_left = 166.614
+offset_top = 16.967
+offset_right = 342.614
+offset_bottom = 81.967
+scale = Vector2(2.44178, 1.74243)
+theme_override_fonts/font = ExtResource("1_ymrm4")
+theme_override_font_sizes/font_size = 64
+text = "HELLO"
+
+[node name="Button" type="Button" parent="Item1"]
+z_index = 1
+texture_filter = 1
+offset_left = 627.132
+offset_top = 8.48354
+offset_right = 824.132
+offset_bottom = 70.4835
+scale = Vector2(1.05113, 1.99664)
+theme_override_fonts/font = ExtResource("1_ymrm4")
+theme_override_font_sizes/font_size = 18
+text = "BUY"
+icon_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="Item1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item1/Area2D"]
+position = Vector2(419.25, 72.1098)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1cyt5")
+
+[node name="Item2" type="ColorRect" parent="."]
+offset_left = 7.0
+offset_top = 263.0
+offset_right = 846.0
+offset_bottom = 407.0
+scale = Vector2(0.966304, 0.825131)
+
+[node name="Border" type="Sprite2D" parent="Item2"]
+z_index = 1
+texture_filter = 1
+position = Vector2(77.6153, 71.5039)
+scale = Vector2(9, 9)
+texture = ExtResource("3_5xp22")
+
+[node name="TrafficOfficerPortrait" type="Sprite2D" parent="Item2/Border"]
+z_index = 2
+texture_filter = 1
+position = Vector2(-0.689914, 0.134655)
+scale = Vector2(0.40245, 0.430908)
 texture = ExtResource("5_ow1eo")
 
-[node name="DogPortrait" type="Sprite2D" parent="."]
+[node name="Label2" type="Label" parent="Item2"]
+z_index = 1
 texture_filter = 1
-position = Vector2(78, 641)
-scale = Vector2(4.3125, 4.125)
-texture = ExtResource("6_k6pkm")
+offset_left = 166.614
+offset_top = 16.967
+offset_right = 342.614
+offset_bottom = 81.967
+scale = Vector2(2.44178, 1.74243)
+theme_override_fonts/font = ExtResource("1_ymrm4")
+theme_override_font_sizes/font_size = 64
+text = "HELLO"
+
+[node name="Button" type="Button" parent="Item2"]
+z_index = 1
+texture_filter = 1
+offset_left = 627.132
+offset_top = 8.48354
+offset_right = 824.132
+offset_bottom = 70.4835
+scale = Vector2(1.05113, 1.99664)
+theme_override_fonts/font = ExtResource("1_ymrm4")
+theme_override_font_sizes/font_size = 18
+text = "BUY"
+icon_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="Item2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item2/Area2D"]
+position = Vector2(419.64, 72.1098)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1cyt5")
 
 [node name="ConePortrait" type="Sprite2D" parent="."]
+z_index = 2
 texture_filter = 1
-position = Vector2(78, 800)
-scale = Vector2(4.5, 4.3125)
+position = Vector2(82.9999, 761)
+scale = Vector2(3.5, 3.5)
 texture = ExtResource("7_1sjcd")
 
-[node name="Label4" type="Label" parent="."]
+[node name="Item3" type="ColorRect" parent="."]
+offset_left = 7.0
+offset_top = 413.0
+offset_right = 846.0
+offset_bottom = 557.0
+scale = Vector2(0.966304, 0.825131)
+
+[node name="Border" type="Sprite2D" parent="Item3"]
 z_index = 1
 texture_filter = 1
-offset_left = 164.0
-offset_top = 428.0
-offset_right = 340.0
-offset_bottom = 493.0
+position = Vector2(77.6153, 71.5039)
+scale = Vector2(9, 9)
+texture = ExtResource("3_5xp22")
+
+[node name="DogPortrait" type="Sprite2D" parent="Item3/Border"]
+z_index = 2
+texture_filter = 1
+position = Vector2(0.114987, -0.269325)
+scale = Vector2(0.40245, 0.45784)
+texture = ExtResource("6_k6pkm")
+
+[node name="Label2" type="Label" parent="Item3"]
+z_index = 1
+texture_filter = 1
+offset_left = 166.614
+offset_top = 16.967
+offset_right = 342.614
+offset_bottom = 81.967
 scale = Vector2(2.44178, 1.74243)
 theme_override_fonts/font = ExtResource("1_ymrm4")
 theme_override_font_sizes/font_size = 64
 text = "HELLO"
 
-[node name="Label5" type="Label" parent="."]
+[node name="Button" type="Button" parent="Item3"]
 z_index = 1
 texture_filter = 1
-offset_left = 154.0
-offset_top = 586.0
-offset_right = 330.0
-offset_bottom = 651.0
+offset_left = 627.132
+offset_top = 8.48354
+offset_right = 824.132
+offset_bottom = 70.4835
+scale = Vector2(1.05113, 1.99664)
+theme_override_fonts/font = ExtResource("1_ymrm4")
+theme_override_font_sizes/font_size = 18
+text = "BUY"
+icon_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="Item3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item3/Area2D"]
+position = Vector2(419.64, 72.1098)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1cyt5")
+
+[node name="Item4" type="ColorRect" parent="."]
+offset_left = 8.0
+offset_top = 557.0
+offset_right = 847.0
+offset_bottom = 701.0
+scale = Vector2(0.966304, 0.825131)
+
+[node name="Border" type="Sprite2D" parent="Item4"]
+z_index = 1
+texture_filter = 1
+position = Vector2(77.6153, 71.5039)
+scale = Vector2(9, 9)
+texture = ExtResource("3_5xp22")
+
+[node name="VipPortrait" type="Sprite2D" parent="Item4/Border"]
+z_index = 2
+texture_filter = 1
+position = Vector2(1.90735e-06, -0.538643)
+scale = Vector2(0.437631, 0.471306)
+texture = ExtResource("3_tyrku")
+
+[node name="Label2" type="Label" parent="Item4"]
+z_index = 1
+texture_filter = 1
+offset_left = 166.614
+offset_top = 16.967
+offset_right = 342.614
+offset_bottom = 81.967
 scale = Vector2(2.44178, 1.74243)
 theme_override_fonts/font = ExtResource("1_ymrm4")
 theme_override_font_sizes/font_size = 64
 text = "HELLO"
 
-[node name="Label6" type="Label" parent="."]
+[node name="Button" type="Button" parent="Item4"]
 z_index = 1
 texture_filter = 1
-offset_left = 157.0
-offset_top = 738.0
-offset_right = 333.0
-offset_bottom = 803.0
+offset_left = 627.132
+offset_top = 8.48354
+offset_right = 824.132
+offset_bottom = 70.4835
+scale = Vector2(1.05113, 1.99664)
+theme_override_fonts/font = ExtResource("1_ymrm4")
+theme_override_font_sizes/font_size = 18
+text = "BUY"
+icon_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="Item4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item4/Area2D"]
+position = Vector2(419.64, 72.1098)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1cyt5")
+
+[node name="Item5" type="ColorRect" parent="."]
+offset_left = 9.0
+offset_top = 701.0
+offset_right = 848.0
+offset_bottom = 845.0
+scale = Vector2(0.966304, 0.825131)
+
+[node name="Border" type="Sprite2D" parent="Item5"]
+z_index = 1
+texture_filter = 1
+position = Vector2(77.6153, 71.5039)
+scale = Vector2(9, 9)
+texture = ExtResource("3_5xp22")
+
+[node name="Label2" type="Label" parent="Item5"]
+z_index = 1
+texture_filter = 1
+offset_left = 166.614
+offset_top = 16.967
+offset_right = 342.614
+offset_bottom = 81.967
 scale = Vector2(2.44178, 1.74243)
 theme_override_fonts/font = ExtResource("1_ymrm4")
 theme_override_font_sizes/font_size = 64
 text = "HELLO"
+
+[node name="Button" type="Button" parent="Item5"]
+z_index = 1
+texture_filter = 1
+offset_left = 627.132
+offset_top = 8.48354
+offset_right = 824.132
+offset_bottom = 70.4835
+scale = Vector2(1.05113, 1.99664)
+theme_override_fonts/font = ExtResource("1_ymrm4")
+theme_override_font_sizes/font_size = 18
+text = "BUY"
+icon_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="Item5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item5/Area2D"]
+position = Vector2(419.64, 72.1098)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1cyt5")
