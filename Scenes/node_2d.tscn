@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://cblg8vormvvqe" path="res://Scenes/shop.tscn" id="16_fg7i4"]
 [ext_resource type="Texture2D" uid="uid://frgyxhx0fkpk" path="res://Assets/ShopButton.png" id="17_gwne5"]
 [ext_resource type="Texture2D" uid="uid://cobje0p47hjuw" path="res://Assets/GoBack.webp" id="18_hpu6p"]
-[ext_resource type="Script" uid="uid://cst6rb7na8cry" path="res://Scenes/auto_clicked!.gd" id="19_op2xg"]
+[ext_resource type="Script" uid="uid://cst6rb7na8cry" path="res://Scripts/auto_clicked!.gd" id="19_op2xg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_epypp"]
 animations = [{
