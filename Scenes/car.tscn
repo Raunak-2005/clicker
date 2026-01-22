@@ -1,12 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://cpn7nbyaemmik"]
 
-[ext_resource type="Script" uid="uid://b1ivmsmpbenwv" path="res://Scripts/car.gd" id="1_go66d"]
+[ext_resource type="Script" path="res://Scripts/car.gd" id="1_go66d"]
 [ext_resource type="Texture2D" uid="uid://cov6drddvaqo6" path="res://Assets/Car1.png" id="2_1sfmx"]
 
 [node name="Car" type="Node2D"]
+visible = false
 script = ExtResource("1_go66d")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 3
 position = Vector2(89.5, 57.5)
 rotation = 1.5708
