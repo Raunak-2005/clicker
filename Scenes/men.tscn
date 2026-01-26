@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://cgiy3xxgbsw7r"]
+[gd_scene load_steps=18 format=3 uid="uid://cgiy3xxgbsw7r"]
 
 [ext_resource type="Texture2D" uid="uid://bcryf3u1pl1nf" path="res://Assets/Green Guy-Sheet.png" id="1_8tl16"]
 [ext_resource type="Script" uid="uid://cts3im73pum7o" path="res://Scripts/walking.gd" id="2_4oc5y"]
 [ext_resource type="Texture2D" uid="uid://c80na3aaljwb8" path="res://Assets/Bodyguard Top Down-Sheet.png" id="2_r58rf"]
+[ext_resource type="Texture2D" uid="uid://dw6upy0vku2m1" path="res://Assets/Death_Animation-Sheet.webp" id="3_avxvs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vhdh5"]
 atlas = ExtResource("2_r58rf")
@@ -19,6 +20,18 @@ region = Rect2(32, 0, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_cysp5"]
 atlas = ExtResource("2_r58rf")
 region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rl23i"]
+atlas = ExtResource("3_avxvs")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwoqi"]
+atlas = ExtResource("3_avxvs")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhx20"]
+atlas = ExtResource("3_avxvs")
+region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4oc5y"]
 atlas = ExtResource("1_8tl16")
@@ -57,6 +70,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_rl23i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwoqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhx20")
+}],
+"loop": false,
+"name": &"ex",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_4oc5y")
 }, {
 "duration": 1.0,
@@ -73,6 +100,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r58rf"]
+size = Vector2(18, 40)
+
 [node name="Men" type="Node2D"]
 script = ExtResource("2_4oc5y")
 
@@ -81,4 +111,14 @@ z_index = 10
 texture_filter = 1
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_vhdh5")
-animation = &"walk"
+animation = &"ex"
+autoplay = "walk"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_r58rf")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

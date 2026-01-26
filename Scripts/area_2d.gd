@@ -39,7 +39,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 				print(randy)
 				add_child(dude)
 				dude.walk_start()
-				get_tree().root.get_child(0).count+=1
+				
 			else:
 				var vips = vip.instantiate()
 				vips.get_node("Men").speed = sp
@@ -54,8 +54,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 				add_child(vips)
 				vips.get_node("Men").walk_start()
 				vips.get_node("Men2").walk_start()
-				vips.get_node("Men3").walk_start()
-				get_tree().root.get_child(0).count+=3 #just testing wont work like this
+				vips.get_node("Men3").walk_start() #just testing wont work like this
 				print('pcent',pcent)
 		
 		Input.set_custom_mouse_cursor(texture,Input.CURSOR_ARROW)
@@ -75,7 +74,7 @@ func working():
 				print(randy)
 				add_child(dude)
 				dude.walk_start()
-				get_tree().root.get_child(0).count+=1
+				
 			else:
 				var vips = vip.instantiate()
 				vips.get_node("Men").speed = sp
@@ -91,4 +90,4 @@ func working():
 				vips.get_node("Men").walk_start()
 				vips.get_node("Men2").walk_start()
 				vips.get_node("Men3").walk_start()
-				get_tree().root.get_child(0).count+=3 #just testing wont work like this
+				 #just testing wont work like this

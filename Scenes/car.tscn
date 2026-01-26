@@ -4,13 +4,20 @@
 [ext_resource type="Texture2D" uid="uid://cov6drddvaqo6" path="res://Assets/Car1.png" id="2_1sfmx"]
 
 [node name="Car" type="Node2D"]
-visible = false
 script = ExtResource("1_go66d")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 texture_filter = 3
-position = Vector2(89.5, 57.5)
+position = Vector2(89, 49)
 rotation = 1.5708
 scale = Vector2(2.39844, 2.79687)
 texture = ExtResource("2_1sfmx")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(89, 49)
+rotation = 1.5708
+scale = Vector2(2.39844, 2.79687)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(1.66775, -0.357536)
+polygon = PackedVector2Array(-25.4331, 18.5923, -47.9478, 16.8047, -55.8696, 8.5812, -56.7036, -9.29593, -49.6157, -17.1619, -27.101, -17.5195, -17.5114, -14.3016, 15.8436, -15.7319, 24.5993, -0.357618, 12.9251, 13.9441, -21.6807, 13.5867)

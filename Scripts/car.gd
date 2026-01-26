@@ -1,3 +1,4 @@
+class_name car
 extends Node2D
 var is_walking = false
 var target

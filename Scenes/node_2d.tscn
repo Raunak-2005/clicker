@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://0kgd4s5iyrq5"]
+[gd_scene load_steps=30 format=3 uid="uid://0kgd4s5iyrq5"]
 
 [ext_resource type="Script" uid="uid://dgxiu7ifv5ygb" path="res://Scripts/node_2d.gd" id="1_he4j0"]
 [ext_resource type="Texture2D" uid="uid://h7vxa6so74js" path="res://Assets/Clicker1 (2).png" id="2_85gyg"]
@@ -12,7 +12,6 @@
 [ext_resource type="Script" uid="uid://mrdaxw6wmew6" path="res://Scripts/audio_stream_player_2d.gd" id="10_03fgm"]
 [ext_resource type="Texture2D" uid="uid://b1wkr76tv8t42" path="res://Assets/Crossing.png" id="11_uu23e"]
 [ext_resource type="Texture2D" uid="uid://b4kf2xd3hc4nd" path="res://Assets/Cursor-Sheet.png" id="12_ny2ev"]
-[ext_resource type="Texture2D" uid="uid://b5bxc6jlpn585" path="res://Assets/ex11.png" id="13_jiy1d"]
 [ext_resource type="Script" uid="uid://bsmw0t72btxyu" path="res://Scripts/timer.gd" id="14_85gyg"]
 [ext_resource type="Script" uid="uid://d1ale4lmmy5b" path="res://Scripts/car_controller.gd" id="15_c32x4"]
 [ext_resource type="PackedScene" uid="uid://cblg8vormvvqe" path="res://Scenes/shop.tscn" id="16_fg7i4"]
@@ -158,13 +157,6 @@ texture = ExtResource("11_uu23e")
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 position = Vector2(-37, -13)
 sprite_frames = SubResource("SpriteFrames_ta5nu")
-
-[node name="Ex11" type="Sprite2D" parent="."]
-modulate = Color(1, 0.620464, 0.56818, 1)
-texture_filter = 3
-position = Vector2(1343, -512)
-scale = Vector2(0.638, 0.862)
-texture = ExtResource("13_jiy1d")
 
 [node name="Timer" type="Node2D" parent="."]
 script = ExtResource("14_85gyg")
