@@ -49,7 +49,7 @@ func _on_button_pressed3() -> void:
 		get_parent().get_node(".").autot*=0.9
 		get_parent().get_node('TheGuyHand').visible = true
 		get_parent().get_node('.').count -=costguy
-		costguy=(costguy*1.8)
+		costguy=int(costguy*1.8)
 		button1.text = 'BUY\ncost '+str(costguy)
 		play_audio()
 	pass # Replace with function body.

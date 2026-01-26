@@ -68,7 +68,7 @@ offset_right = 610.0
 offset_bottom = 133.0
 theme_override_fonts/font = ExtResource("1_ymrm4")
 theme_override_font_sizes/font_size = 32
-text = "Traffic  Guy:
+text = "Traffic  Guy
 Pushes the button for you 
 every 5 seconds"
 
@@ -125,7 +125,7 @@ offset_right = 342.614
 offset_bottom = 81.967
 theme_override_fonts/font = ExtResource("1_ymrm4")
 theme_override_font_sizes/font_size = 32
-text = "Crossing guard:
+text = "Crossing guard
 increases number of people
 crossing per press"
 
@@ -182,7 +182,7 @@ offset_right = 342.614
 offset_bottom = 81.967
 theme_override_fonts/font = ExtResource("1_ymrm4")
 theme_override_font_sizes/font_size = 32
-text = "Dog:
+text = "Dog
 increases the speed of 
 people crossing"
 
@@ -239,7 +239,7 @@ offset_right = 464.614
 offset_bottom = 137.907
 theme_override_fonts/font = ExtResource("1_ymrm4")
 theme_override_font_sizes/font_size = 32
-text = "VIP:
+text = "VIP
 counts  as   th ree,
 appears at a  chance"
 
@@ -296,7 +296,7 @@ offset_right = 342.614
 offset_bottom = 81.967
 theme_override_fonts/font = ExtResource("1_ymrm4")
 theme_override_font_sizes/font_size = 32
-text = "Traffic  cone:
+text = "Traffic  cone
 decrease  ti m e  after each 
 button press"
 

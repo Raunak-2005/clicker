@@ -19,9 +19,9 @@ config/icon="uid://mvng1pe8dmh0"
 
 window/size/viewport_width=850
 window/size/viewport_height=850
-window/size/resizable=false
-window/stretch/mode="viewport"
-window/stretch/scale_mode="integer"
+window/size/borderless=true
+window/size/extend_to_title=true
+window/stretch/mode="canvas_items"
 window/handheld/orientation=1
 mouse_cursor/custom_image="uid://b4kf2xd3hc4nd"
 
@@ -36,3 +36,4 @@ ui_Mouse_left_Click={
 [rendering]
 
 textures/vram_compression/import_etc2_astc=true
+viewport/hdr_2d=true
