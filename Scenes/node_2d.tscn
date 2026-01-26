@@ -195,6 +195,9 @@ script = ExtResource("15_c32x4")
 [node name="Shop" parent="." instance=ExtResource("16_fg7i4")]
 position = Vector2(1550, -50)
 
+[node name="MainCamera" type="Camera2D" parent="."]
+position = Vector2(625, 425)
+
 [node name="ShopCamera" type="Camera2D" parent="."]
 position = Vector2(1975, 373)
 enabled = false

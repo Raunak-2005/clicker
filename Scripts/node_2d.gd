@@ -42,9 +42,11 @@ func autoclick():
 
 func _on_button_pressed() -> void:
 	$ShopCamera.enabled=true
+	$MainCamera.enabled=false
 	pass # Replace with function body.
 
 
 func _on_close_pressed() -> void:
-	$ShopCamera.enabled=!true
+	$ShopCamera.enabled= false
+	$MainCamera.enabled = true
 	pass # Replace with function body.
