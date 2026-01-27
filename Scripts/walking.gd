@@ -40,7 +40,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.get_parent() is car:
 		is_walking= 0
 		scale*=0.33
-		get_node("Area2D/CollisionShape2D").disabled=true
+		#get_node("Area2D/CollisionShape2D").disabled=true
 		get_node("AnimatedSprite2D").animation="ex"
 		
 		
@@ -49,6 +49,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if get_node("AnimatedSprite2D").animation=="ex":
+		get_tree().root.get_child(0).countcr+=1
 		queue_free()
 	
 	pass # Replace with function body.

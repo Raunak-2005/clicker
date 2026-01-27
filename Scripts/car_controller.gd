@@ -10,7 +10,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if ((get_parent().get_node(".").tl>=2 and get_parent().get_node(".").autot>=2) or true):
-		if ((get_parent().get_node("Timer").t.time_left==0 || get_parent().get_node("Timer").t.time_left==0)&& 1) && nalr:
+		if ((get_parent().get_node("Timer").t.time_left==0 || get_parent().get_node("Timer").t.time_left==0)&& 0) or nalr:
 				nalr=false
 				var carr = car.instantiate()
 				var randx = randf_range(300,737) 

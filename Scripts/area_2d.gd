@@ -33,6 +33,9 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 				dude.speed=sp
 				var randx = randf_range(-250,-150)
 				var randy = randf_range(50,130)
+				if get_tree().root.get_child(0).tt==true:
+					
+					randy=clamp(get_node("Point").position.y+randf_range(-15,15),10,130)
 				dude.position = Vector2(randx,randy)
 				dude.z_index = 100
 				print(randx)
@@ -47,6 +50,10 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 				vips.get_node('Men3').speed = sp
 				var randx = randf_range(-250,-150)
 				var randy = randf_range(50,130)
+				if get_tree().root.get_child(0).tt==true:
+					
+					randy=clamp(get_node("Point").position.y+randf_range(-15,15),50,130)
+				
 				vips.position = Vector2(randx,randy)
 				vips.z_index = 100
 				print(randx)
@@ -68,6 +75,9 @@ func working():
 				dude.speed=sp
 				var randx = randf_range(-250,-150)
 				var randy = randf_range(50,130)
+				if get_tree().root.get_child(0).tt==true:
+					
+					randy=clamp(get_node("Point").position.y+randf_range(-15,15),10,130)
 				dude.position = Vector2(randx,randy)
 				dude.z_index = 100
 				print(randx)
@@ -82,6 +92,9 @@ func working():
 				vips.get_node('Men3').speed = sp
 				var randx = randf_range(-250,-150)
 				var randy = randf_range(50,130)
+				if get_tree().root.get_child(0).tt==true:
+					
+					randy=clamp(get_node("Point").position.y+randf_range(-15,15),50,130)
 				vips.position = Vector2(randx,randy)
 				vips.z_index = 100
 				print(randx)

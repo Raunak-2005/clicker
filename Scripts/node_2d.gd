@@ -1,6 +1,7 @@
 extends Node2D
 var count=10000000
-var texty
+var countcr=0
+var tt=true
 var texture
 var tl=5
 var auto=false
@@ -10,7 +11,8 @@ var act=false
 
 func _ready() -> void:
 	texture="AnimatedSprite2D2"
-	
+	if tt==false:
+		get_node("AnimatedSprite2D/Area2D/Point").visible=false
 	pass # Replace with function body.
 
 
@@ -22,8 +24,6 @@ func _process(delta: float) -> void:
 	if auto==true && act==false:
 		act=true
 		autoclick()
-		
-		
 	pass
 
 func autoclick():

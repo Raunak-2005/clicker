@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cqw3tkjoxm1a"]
 
-[ext_resource type="Script" uid="uid://4qdfx00sqi25" path="res://vip.gd" id="1_vxg4a"]
+[ext_resource type="Script" uid="uid://4qdfx00sqi25" path="res://Scripts/vip.gd" id="1_vxg4a"]
 [ext_resource type="PackedScene" uid="uid://cgiy3xxgbsw7r" path="res://Scenes/men.tscn" id="2_j7ttp"]
 
 [node name="VIP" type="Node2D"]
