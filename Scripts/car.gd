@@ -11,7 +11,7 @@ func _ready() -> void:
 func walk_start():
 	is_walking = true
 	check= true
-	target = position.y - 700
+	target = position.y - 620 
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

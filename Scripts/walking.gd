@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 		position.x += speed*delta
 	if position.x >= target:
 		print('done')
-		get_tree().root.get_child(0).count+=1
+		get_tree().root.get_node("Node2D").count+=1
 		is_walking = false
 		animated_sprite_2d.stop()
 		queue_free()
@@ -49,7 +49,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if get_node("AnimatedSprite2D").animation=="ex":
-		get_tree().root.get_child(0).countcr+=1
+		get_tree().root.get_node("Node2D").countcr+=1
 		queue_free()
 	
 	pass # Replace with function body.
