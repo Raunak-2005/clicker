@@ -1,0 +1,438 @@
+[gd_scene load_steps=49 format=3 uid="uid://m40ipaj6nvlt"]
+
+[ext_resource type="Script" uid="uid://bf8d5tjfq2ujr" path="res://Scripts/game.gd" id="1_22asu"]
+[ext_resource type="Texture2D" uid="uid://cswlasv467r35" path="res://Assets/Officer Top Down-Sheet.png" id="2_fkdbe"]
+[ext_resource type="Script" uid="uid://bopl2vxprr3hn" path="res://Scripts/2_nd_player.gd" id="3_81klo"]
+[ext_resource type="Texture2D" uid="uid://ddxljc6ctssug" path="res://Assets/Cr-Sheet.png" id="4_tgy6u"]
+[ext_resource type="Texture2D" uid="uid://bac78f5qnv2gq" path="res://Assets/Clicker1 (1).png" id="5_cwurv"]
+[ext_resource type="Script" uid="uid://bspuub4fwop7y" path="res://Scripts/area_2d2.gd" id="6_mucmn"]
+[ext_resource type="PackedScene" uid="uid://bbnwsskogybq8" path="res://Scenes/car_controller.tscn" id="7_8m3t6"]
+[ext_resource type="FontFile" uid="uid://dkjky1udawmw0" path="res://Assets/ARCADECLASSIC.TTF" id="8_ese38"]
+[ext_resource type="Texture2D" uid="uid://d0p7wky5krsbr" path="res://Assets/The Guy Hand.png" id="9_oeip8"]
+[ext_resource type="Script" uid="uid://cst6rb7na8cry" path="res://Scripts/auto_clicked!.gd" id="10_xe308"]
+[ext_resource type="Texture2D" uid="uid://cobje0p47hjuw" path="res://Assets/GoBack.webp" id="11_d3cha"]
+[ext_resource type="Texture2D" uid="uid://frgyxhx0fkpk" path="res://Assets/ShopButton.png" id="12_i26dy"]
+[ext_resource type="PackedScene" uid="uid://cblg8vormvvqe" path="res://Scenes/shop.tscn" id="13_lmoi6"]
+[ext_resource type="Script" uid="uid://bsmw0t72btxyu" path="res://Scripts/timer.gd" id="14_6uxt2"]
+[ext_resource type="Texture2D" uid="uid://b4kf2xd3hc4nd" path="res://Assets/Cursor-Sheet.png" id="15_ym3tv"]
+[ext_resource type="Texture2D" uid="uid://b1wkr76tv8t42" path="res://Assets/Crossing.png" id="16_bwj6o"]
+[ext_resource type="AudioStream" uid="uid://kgcs8muw1q6f" path="res://Assets/Jorge Hernandez - Chopsticks ♫ NO COPYRIGHT 8-bit Music - Free Music (youtube).wav" id="17_f3c8l"]
+[ext_resource type="Script" uid="uid://mrdaxw6wmew6" path="res://Scripts/audio_stream_player_2d.gd" id="18_bu0y5"]
+[ext_resource type="Texture2D" uid="uid://h7vxa6so74js" path="res://Assets/Clicker1 (2).png" id="19_6a4tp"]
+[ext_resource type="Script" uid="uid://c4yj7eatx7bv6" path="res://Scripts/animated_sprite_2d.gd" id="20_631el"]
+[ext_resource type="Script" uid="uid://cmoy0glpi75nd" path="res://Scripts/area_2d.gd" id="21_vs120"]
+[ext_resource type="Script" uid="uid://dwjnvlsnm64an" path="res://Scripts/collision_shape_2d.gd" id="22_v2cs8"]
+[ext_resource type="Texture2D" uid="uid://tqjc5d032w2i" path="res://Assets/point.png" id="23_32sfa"]
+[ext_resource type="Script" uid="uid://dpa7y3otuloto" path="res://Scripts/point.gd" id="24_titue"]
+[ext_resource type="AudioStream" uid="uid://2dewmbrm1us6" path="res://Assets/button-press-3-386171_69xd9Yn0.mp3" id="25_tt7mg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_el1jj"]
+atlas = ExtResource("2_fkdbe")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03fgm"]
+atlas = ExtResource("2_fkdbe")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uu23e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_el1jj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03fgm")
+}],
+"loop": true,
+"name": &"salute",
+"speed": 0.5
+}]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ny2ev"]
+properties/0/path = NodePath("2ndPlayer/car/Area2D:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("AnimatedSprite2D/Area2D:position")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("AnimatedSprite2D/Area2D:sp")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ny2ev"]
+atlas = ExtResource("4_tgy6u")
+region = Rect2(0, 0, 500, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jiy1d"]
+atlas = ExtResource("4_tgy6u")
+region = Rect2(500, 0, 500, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ud1os"]
+atlas = ExtResource("4_tgy6u")
+region = Rect2(1000, 0, 500, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpmp2"]
+atlas = ExtResource("4_tgy6u")
+region = Rect2(1500, 0, 500, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xiv05"]
+atlas = ExtResource("4_tgy6u")
+region = Rect2(2000, 0, 500, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uybdb"]
+atlas = ExtResource("4_tgy6u")
+region = Rect2(2500, 0, 500, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uh8xd"]
+atlas = ExtResource("4_tgy6u")
+region = Rect2(3000, 0, 500, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5e5l"]
+atlas = ExtResource("4_tgy6u")
+region = Rect2(3500, 0, 500, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwylj"]
+atlas = ExtResource("4_tgy6u")
+region = Rect2(4000, 0, 500, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opb2v"]
+atlas = ExtResource("4_tgy6u")
+region = Rect2(4500, 0, 500, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrm6q"]
+atlas = ExtResource("4_tgy6u")
+region = Rect2(5000, 0, 500, 188)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4s5l7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ny2ev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jiy1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ud1os")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpmp2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xiv05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uybdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uh8xd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5e5l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwylj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opb2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrm6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrm6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrm6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrm6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrm6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrm6q")
+}],
+"loop": false,
+"name": &"default",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ny2ev")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ny2ev"]
+radius = 19.7245
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0h7mo"]
+atlas = ExtResource("15_ym3tv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nr8wp"]
+atlas = ExtResource("15_ym3tv")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2bti"]
+atlas = ExtResource("15_ym3tv")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ta5nu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0h7mo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nr8wp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2bti")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_epypp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_6a4tp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cwurv")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_cwurv")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kdubu"]
+radius = 20.5602
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_22asu")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = 77
+texture_filter = 1
+position = Vector2(256, 502)
+scale = Vector2(12, 12)
+sprite_frames = SubResource("SpriteFrames_uu23e")
+animation = &"salute"
+autoplay = "salute"
+frame_progress = 0.243642
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_ny2ev")
+
+[node name="2ndPlayer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 200.0
+offset_right = 240.0
+offset_bottom = 40.0
+script = ExtResource("3_81klo")
+
+[node name="car" type="AnimatedSprite2D" parent="2ndPlayer"]
+texture_filter = 1
+position = Vector2(-761, 181)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_4s5l7")
+
+[node name="Sprite2D" type="Sprite2D" parent="2ndPlayer/car"]
+z_index = -1
+position = Vector2(0.115365, 155.636)
+texture = ExtResource("5_cwurv")
+
+[node name="Area2D" type="Area2D" parent="2ndPlayer/car"]
+script = ExtResource("6_mucmn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="2ndPlayer/car/Area2D"]
+position = Vector2(173.97, 34.9459)
+shape = SubResource("CircleShape2D_ny2ev")
+
+[node name="Car Controller" parent="." instance=ExtResource("7_8m3t6")]
+
+[node name="Count" type="Label" parent="."]
+modulate = Color(0.435192, 0.435192, 0.435192, 1)
+offset_left = -756.0
+offset_top = 372.0
+offset_right = -485.0
+offset_bottom = 459.0
+theme_override_fonts/font = ExtResource("8_ese38")
+theme_override_font_sizes/font_size = 64
+text = "Counter"
+
+[node name="TheGuyHand" type="Sprite2D" parent="."]
+visible = false
+z_index = 74
+texture_filter = 1
+position = Vector2(540, 309)
+scale = Vector2(4, 4)
+texture = ExtResource("9_oeip8")
+
+[node name="AutoClicked!" type="Label" parent="."]
+visible = false
+z_index = 77
+texture_filter = 3
+offset_left = 803.0
+offset_top = 267.0
+offset_right = 950.0
+offset_bottom = 290.0
+theme_override_fonts/font = ExtResource("8_ese38")
+theme_override_font_sizes/font_size = 15
+text = "Thanks Traffic Guy!"
+script = ExtResource("10_xe308")
+
+[node name="ShopCounter" type="Label" parent="."]
+texture_filter = 1
+offset_left = 1555.0
+offset_top = 7.0
+offset_right = 1678.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("8_ese38")
+theme_override_font_sizes/font_size = 32
+text = "COUNTER"
+
+[node name="Close" type="Button" parent="."]
+z_index = 77
+offset_left = 1557.0
+offset_top = -48.0
+offset_right = 1629.0
+offset_bottom = 24.0
+scale = Vector2(0.576674, 0.504982)
+icon = ExtResource("11_d3cha")
+flat = true
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+z_index = 69
+offset_left = 524.0
+offset_top = 348.0
+offset_right = 564.0
+offset_bottom = 388.0
+color = Color(9.62615e-08, 0.822991, 1.15514e-06, 1)
+
+[node name="Button" type="Button" parent="."]
+z_index = 77
+offset_left = 997.0
+offset_top = 8.0
+offset_right = 1069.0
+offset_bottom = 80.0
+scale = Vector2(0.633168, 0.62687)
+icon = ExtResource("12_i26dy")
+flat = true
+
+[node name="Shop" parent="." instance=ExtResource("13_lmoi6")]
+position = Vector2(1550, -50)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = 77
+offset_left = 551.0
+offset_top = 130.0
+offset_right = 672.0
+offset_bottom = 188.0
+color = Color(0.356863, 0.431373, 0.882353, 1)
+
+[node name="Label2" type="Label" parent="ColorRect"]
+texture_filter = 3
+layout_mode = 0
+offset_left = 41.0
+offset_top = -2.0
+offset_right = 115.0
+offset_bottom = 63.0
+theme_override_fonts/font = ExtResource("8_ese38")
+theme_override_font_sizes/font_size = 64
+text = "1"
+
+[node name="Timer" type="Node2D" parent="."]
+script = ExtResource("14_6uxt2")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(-37, -13)
+sprite_frames = SubResource("SpriteFrames_ta5nu")
+
+[node name="Crossing" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(625, 664.902)
+scale = Vector2(6.60937, 5.78432)
+texture = ExtResource("16_bwj6o")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_f3c8l")
+autoplay = true
+max_distance = 50000.0
+script = ExtResource("18_bu0y5")
+
+[node name="Main_Counter" type="Label" parent="."]
+modulate = Color(0.573839, 0.616393, 0.564757, 1)
+z_index = 76
+texture_filter = 3
+offset_left = 331.0
+offset_top = 382.0
+offset_right = 864.0
+offset_bottom = 447.0
+theme_override_fonts/font = ExtResource("8_ese38")
+theme_override_font_sizes/font_size = 64
+text = "Counter"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.964794, 0.945912, 1, 1)
+z_index = 70
+texture_filter = 3
+position = Vector2(575, 514.438)
+scale = Vector2(2.2865, 2.27425)
+sprite_frames = SubResource("SpriteFrames_epypp")
+animation = &"new_animation"
+autoplay = "new_animation"
+script = ExtResource("20_631el")
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+script = ExtResource("21_vs120")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
+position = Vector2(9.62169, -118.473)
+shape = SubResource("CircleShape2D_kdubu")
+script = ExtResource("22_v2cs8")
+
+[node name="Point" type="Sprite2D" parent="AnimatedSprite2D/Area2D"]
+texture_filter = 3
+position = Vector2(-151.76, -2.39111)
+scale = Vector2(0.43735, 0.439705)
+texture = ExtResource("23_32sfa")
+script = ExtResource("24_titue")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AnimatedSprite2D"]
+stream = ExtResource("25_tt7mg")
+
+[connection signal="input_event" from="2ndPlayer/car/Area2D" to="2ndPlayer/car/Area2D" method="_on_input_event"]
+[connection signal="input_event" from="2ndPlayer/car/Area2D" to="2ndPlayer/car/Area2D" method="_on_input_event2"]
+[connection signal="pressed" from="Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="input_event" from="AnimatedSprite2D/Area2D" to="AnimatedSprite2D/Area2D" method="_on_input_event"]
+[connection signal="input_event" from="AnimatedSprite2D/Area2D" to="AnimatedSprite2D/Area2D" method="_on_input_eventrpc"]
+
+[editable path="Shop"]

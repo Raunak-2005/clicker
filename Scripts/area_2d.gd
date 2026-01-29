@@ -3,11 +3,11 @@ var to
 var texture
 var texture1
 var no
-var sp=100
+@export var sp=100
 const guy = preload("res://Scenes/men.tscn")
 const vip = preload("res://Scenes/vip.tscn")
 var pcent = 0.01
-var ret=100
+var ret=0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -36,10 +36,13 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 				dude.speed=sp
 				var randx = randf_range(-250,-150)
 				var randy = randf_range(50,130)
+				
 				if get_tree().root.get_node("Node2D").tt==true:
 					
 					randy=clamp(get_node("Point").position.y+randf_range(-15,15),10,130)
+					
 				dude.position = Vector2(randx,randy)
+				get_tree().get_multiplayer().rpc(get_tree().get_multiplayer().get_peers()[0],get_tree().root.get_node("Node2D/Game/AnimatedSprite2D/Area2D"),"working2n",[randx,randy])		
 				dude.z_index = 100
 				print(randx)
 				print(randy)
@@ -56,7 +59,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 				if get_tree().root.get_node("Node2D").tt==true:
 					
 					randy=clamp(get_node("Point").position.y+randf_range(-15,15),50,130)
-				
+				get_tree().get_multiplayer().rpc(get_tree().get_multiplayer().get_peers()[0],get_tree().root.get_node("Node2D/Game/AnimatedSprite2D/Area2D"),"working2v",[randx,randy])	
 				vips.position = Vector2(randx,randy)
 				vips.z_index = 100
 				print(randx)
@@ -83,12 +86,7 @@ func working():
 				if get_tree().root.get_node("Node2D").tt==true:
 					
 					randy=clamp(get_node("Point").position.y+randf_range(-15,15),10,130)
-					
-					ret=get_tree().get_multiplayer().rpc(get_tree().get_multiplayer().get_peers()[0],get_tree().root.get_node("Node2D/AnimatedSprite2D/Area2D"),"sett")
-					#get_node("Point").position.y=ret
-					print(ret)
-					print("^^counter")
-					randy=clamp(get_node("Point").position.y+randf_range(-15,15),10,130)
+				get_tree().get_multiplayer().rpc(get_tree().get_multiplayer().get_peers()[0],get_tree().root.get_node("Node2D/Game/AnimatedSprite2D/Area2D"),"working2n",[randx,randy])		
 				dude.position = Vector2(randx,randy)
 				dude.z_index = 100
 				print(randx)
@@ -106,6 +104,7 @@ func working():
 				if get_tree().root.get_node("Node2D").tt==true:
 					
 					randy=clamp(get_node("Point").position.y+randf_range(-15,15),50,130)
+				get_tree().get_multiplayer().rpc(get_tree().get_multiplayer().get_peers()[0],get_tree().root.get_node("Node2D/Game/AnimatedSprite2D/Area2D"),"working2v",[randx,randy])	
 				vips.position = Vector2(randx,randy)
 				vips.z_index = 100
 				print(randx)
@@ -114,14 +113,27 @@ func working():
 				vips.get_node("Men").walk_start()
 				vips.get_node("Men2").walk_start()
 				vips.get_node("Men3").walk_start()
-				 #just testing wont work like this
 @rpc("any_peer","call_remote")
-func sett():
-	return get_tree().root.get_node("Node2D").count
-	#return clamp(get_node("Point").position.y+randf_range(-15,15),10,130)
+func working2n(randx,randy):
 	
-
-func _on_input_eventrpc(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if (Input.is_action_just_pressed("ui_Mouse_left_Click")) :
-			get_tree().get_multiplayer().rpc(get_tree().get_multiplayer().get_peers()[0],get_tree().root.get_node("Node2D/AnimatedSprite2D/Area2D"),"working")					
-	pass # Replace with function body.
+			
+		var dude = guy.instantiate()
+		dude.speed=sp
+		dude.position = Vector2(randx,randy)
+		dude.z_index = 100
+		add_child(dude)
+		dude.walk_start()
+@rpc("any_peer","call_local")				
+func working2v(randx,randy):
+	
+		var vips = vip.instantiate()
+		vips.get_node("Men").speed = sp
+		vips.get_node('Men2').speed = sp
+		vips.get_node('Men3').speed = sp
+		vips.position = Vector2(randx,randy)
+		vips.z_index = 100
+		add_child(vips)
+		vips.get_node("Men").walk_start()
+		vips.get_node("Men2").walk_start()
+		vips.get_node("Men3").walk_start()
+							

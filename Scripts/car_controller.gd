@@ -3,7 +3,7 @@ const car = preload("res://Scenes/car.tscn")
 var nalr
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-
+	multiplayer.peer_connected.connect(check)
 	nalr=true
 	pass # Replace with function body.
 
@@ -13,6 +13,8 @@ func _process(delta: float) -> void:
 	
 			
 	pass
+func check(id:int):
+	set_multiplayer_authority(id)
 func cartt():
 	if nalr :
 			nalr=false

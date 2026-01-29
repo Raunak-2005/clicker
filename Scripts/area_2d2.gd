@@ -3,7 +3,7 @@ var t
 signal shoot
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	shoot.connect(get_parent().get_parent().get_node("Car Controller").cartt)
+	shoot.connect(get_parent().get_parent().get_parent().get_node("Car Controller").cartt)
 	pass # Replace with function body.
 
 
@@ -15,28 +15,23 @@ func _process(delta: float) -> void:
 		
 	pass
 
-@rpc("any_peer","call_local")
+
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if (Input.is_action_just_pressed("ui_Mouse_left_Click")): 
+		
 		get_parent().animation="default"
 		get_parent().play("default",clamp((22-get_parent().get_frame()),-1,1))
 		#get_parent().get
 		shoot.emit()
-		get_tree().root.get_node("Node2D").get_node("AnimatedSprite2D/AudioStreamPlayer2D").play() 
+		get_parent().get_parent().get_parent().get_node("AnimatedSprite2D/AudioStreamPlayer2D").play() 
 		print(get_tree().get_multiplayer().get_remote_sender_id())
 	
-@rpc("any_peer","call_local")	
+
 func check():
 	get_parent().animation="default"
 	get_parent().play("default",clamp((22-get_parent().get_frame()),-1,1))
 		#get_parent().get
 	shoot.emit()
-	get_tree().root.get_node("Node2D").get_node("AnimatedSprite2D/AudioStreamPlayer2D").play() 
+	get_tree().root.get_node("Node2D").get_node("Game/AnimatedSprite2D/AudioStreamPlayer2D").play() 
 	print(get_tree().get_multiplayer().get_remote_sender_id())		
 	
-
-
-func _on_input_event2(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if (Input.is_action_just_pressed("ui_Mouse_left_Click")): 
-		check.rpc() 
-	pass # Replace with function body.

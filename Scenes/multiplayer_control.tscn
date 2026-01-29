@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://1jh4hwf1c0e0"]
+
+[ext_resource type="Script" uid="uid://ddqhir45djrqv" path="res://Scripts/panel.gd" id="1_051uo"]
+[ext_resource type="Script" uid="uid://buwgwl4q4vcuw" path="res://Scripts/multiplayer_spawner.gd" id="2_hq8p1"]
+[ext_resource type="PackedScene" uid="uid://bq761b6xnr0ps" path="res://Scenes/2_nd_player.tscn" id="3_3xrua"]
+
+[node name="Multiplayer Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 2594.0
+offset_right = 3082.0
+offset_bottom = 345.0
+script = ExtResource("1_051uo")
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 47.0
+offset_right = 308.0
+offset_bottom = 105.0
+text = "Host"
+
+[node name="Button2" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 162.0
+offset_right = 310.0
+offset_bottom = 215.0
+text = "Connect"
+
+[node name="Camera2D" type="Camera2D" parent="Panel"]
+position = Vector2(261, 173)
+zoom = Vector2(2, 2)
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("uid://bq761b6xnr0ps")
+spawn_path = NodePath("../..")
+script = ExtResource("2_hq8p1")
+PlayerConnect = ExtResource("3_3xrua")
+
+[connection signal="pressed" from="Panel/Button" to="Panel" method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Button2" to="Panel" method="_on_button_2_pressed"]

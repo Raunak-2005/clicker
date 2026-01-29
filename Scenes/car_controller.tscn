@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbnwsskogybq8"]
+
+[ext_resource type="Script" uid="uid://d1ale4lmmy5b" path="res://Scripts/car_controller.gd" id="1_2rvpk"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_opxv8"]
+
+[node name="Car Controller" type="Node2D"]
+script = ExtResource("1_2rvpk")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_opxv8")

@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlp30gj3depas"]
+
+[ext_resource type="Script" uid="uid://b2xyob8t3vw2k" path="res://Scripts/sub_viewport.gd" id="1_pshmy"]
+[ext_resource type="Script" uid="uid://cd7h0phsp6pu8" path="res://Scripts/multiplayer_synchronizer.gd" id="2_qrnr2"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_uh8xd"]
+
+[node name="CameraCar" type="Camera2D"]
+enabled = false
+zoom = Vector2(1, 1.02)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+texture_filter = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -469.0
+offset_top = 53.0
+offset_right = 470.0
+offset_bottom = 471.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(0, 475)
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(939, 418)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+script = ExtResource("1_pshmy")
+
+[node name="Camera2D" type="Camera2D" parent="SubViewportContainer/SubViewport"]
+position = Vector2(425, 691)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_uh8xd")
+script = ExtResource("2_qrnr2")

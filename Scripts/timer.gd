@@ -11,7 +11,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 func startcountdown():
 	get_parent().get_node("ColorRect").visible=true
-	t.start(get_parent().tl)
+	t.start(get_tree().root.get_node("Node2D").tl)
 	await(t.timeout)
 	get_parent().get_node("ColorRect").visible=false
 	t.stop()
