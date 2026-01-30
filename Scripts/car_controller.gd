@@ -21,7 +21,15 @@ func cartt():
 			var carr = car.instantiate()
 			var randx = randf_range(300,737) 
 			var randy = 1000
+			get_tree().get_multiplayer().rpc(get_tree().get_multiplayer().get_peers()[0],get_tree().root.get_node("Node2D/Game/Car Controller"),"carre",[randx,randy])	
 			carr.position = Vector2(randx,randy)
 			carr.z_index = 50
 			add_child(carr)
 			carr.walk_start()
+@rpc("any_peer","call_remote")
+func carre(randx,randy):
+	var carr = car.instantiate()	
+	carr.position = Vector2(randx,randy)
+	carr.z_index = 50
+	add_child(carr)
+	carr.walk_start()

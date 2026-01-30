@@ -26,7 +26,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		get_parent().get_parent().get_parent().get_node("AnimatedSprite2D/AudioStreamPlayer2D").play() 
 		print(get_tree().get_multiplayer().get_remote_sender_id())
 	
-
+#get_tree().get_multiplayer().rpc(get_tree().get_multiplayer().get_peers()[0],get_tree().root.get_node("Node2D/Game/AnimatedSprite2D/Area2D"),"working2v",[randx,randy])	
 func check():
 	get_parent().animation="default"
 	get_parent().play("default",clamp((22-get_parent().get_frame()),-1,1))
