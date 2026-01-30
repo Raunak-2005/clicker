@@ -72,6 +72,10 @@ enabled = false
 position = Vector2(625, 425)
 enabled = false
 
+[node name="CarShopCamera" type="Camera2D" parent="."]
+position = Vector2(-1644, 425)
+enabled = false
+
 [node name="CameraCar" type="Camera2D" parent="."]
 position = Vector2(-514, 410)
 enabled = false

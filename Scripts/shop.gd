@@ -28,7 +28,7 @@ func _on_button_pressed() -> void:
 		get_parent().get_parent().get_node('.').count -=costpolice
 		costpolice=int(costpolice*1.3)
 		button2.text = 'BUY\ncost '+str(costpolice)
-		get_parent().get_node("AnimatedSprite2D3").visible = true
+		get_parent().get_node("Graphics/AnimatedSprite2D3").visible = true
 		play_audio()
 	pass # Replace with function body.
 

@@ -1,23 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpn7nbyaemmik"]
+[gd_scene load_steps=4 format=3 uid="uid://cpn7nbyaemmik"]
 
 [ext_resource type="Script" uid="uid://b1ivmsmpbenwv" path="res://Scripts/car.gd" id="1_go66d"]
-[ext_resource type="Texture2D" uid="uid://cov6drddvaqo6" path="res://Assets/Car1.png" id="2_1sfmx"]
+[ext_resource type="Texture2D" uid="uid://c2y4cltljl18a" path="res://Assets/New_Car.png" id="2_go66d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1sfmx"]
+size = Vector2(53.3615, 20)
 
 [node name="Car" type="Node2D"]
+scale = Vector2(2, 2)
 script = ExtResource("1_go66d")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 3
-position = Vector2(89, 49)
-rotation = 1.5708
-scale = Vector2(2.39844, 2.79687)
-texture = ExtResource("2_1sfmx")
+[node name="NewCar" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(89, 22)
+scale = Vector2(4, 4)
+texture = ExtResource("2_go66d")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(89, 49)
 rotation = 1.5708
 scale = Vector2(2.39844, 2.79687)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-position = Vector2(1.66775, -0.357536)
-polygon = PackedVector2Array(-25.4331, 18.5923, -47.9478, 16.8047, -55.8696, 8.5812, -56.7036, -9.29593, -49.6157, -17.1619, -27.101, -17.5195, -17.5114, -14.3016, 15.8436, -15.7319, 24.5993, -0.357618, 12.9251, 13.9441, -21.6807, 13.5867)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-16.2573, 2.86044)
+shape = SubResource("RectangleShape2D_1sfmx")

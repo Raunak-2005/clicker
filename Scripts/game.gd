@@ -23,3 +23,15 @@ func _on_close_pressed() -> void:
 	get_parent().get_node("ShopCamera").enabled= false
 	get_parent().get_node("MainCamera").enabled = true
 	pass # Replace with function body.
+
+
+func _on_car_shop_button_pressed() -> void:
+	get_parent().get_node("CarShopCamera").enabled=true
+	get_parent().get_node("CameraCar").enabled=false
+	pass # Replace with function body.
+
+
+func _on_car_close_pressed() -> void:
+	get_parent().get_node("CarShopCamera").enabled=false
+	get_parent().get_node("CameraCar").enabled=true
+	pass # Replace with function body.
