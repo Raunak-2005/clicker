@@ -45,6 +45,25 @@ zoom = Vector2(2, 2)
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="Multiplayer Control"]
 
+[node name="LineEdit" type="LineEdit" parent="Multiplayer Control"]
+layout_mode = 0
+offset_left = 2761.0
+offset_top = 251.0
+offset_right = 2829.56
+offset_bottom = 282.0
+scale = Vector2(2.47825, 1.04473)
+
+[node name="Label" type="Label" parent="Multiplayer Control/LineEdit"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -12.5088
+offset_top = -7.65752
+offset_right = 27.4912
+offset_bottom = 20.3425
+scale = Vector2(0.448654, 1.48169)
+theme_override_font_sizes/font_size = 20
+text = "IP:"
+
 [node name="ShopCamera" type="Camera2D" parent="."]
 position = Vector2(1975, 373)
 enabled = false
