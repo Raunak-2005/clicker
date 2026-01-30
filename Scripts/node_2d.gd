@@ -14,7 +14,7 @@ var play="Game"
 
 func _ready() -> void:
 	texture="AnimatedSprite2D2"
-	
+	multiplayer.server_disconnected.connect(close)
 	#if get_node("2ndPlayer/CameraCar") != null:
 	#	if get_node("2ndPlayer/CameraCar").enabled == true:	
 	#		tt=false 
@@ -60,3 +60,6 @@ func autoclick():
 	
 	act=false
 	pass # Replace with function body.
+	
+func close():
+	queue_free() 
