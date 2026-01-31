@@ -1,5 +1,5 @@
 extends Node2D
-var count=10000000
+var count=0
 var countcr=0
 var tt=true
 var texture

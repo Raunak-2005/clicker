@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://cgiy3xxgbsw7r"]
+[gd_scene load_steps=23 format=3 uid="uid://cgiy3xxgbsw7r"]
 
 [ext_resource type="Texture2D" uid="uid://bcryf3u1pl1nf" path="res://Assets/Green Guy-Sheet.png" id="1_8tl16"]
 [ext_resource type="Script" uid="uid://cts3im73pum7o" path="res://Scripts/walking.gd" id="2_4oc5y"]
 [ext_resource type="Texture2D" uid="uid://c80na3aaljwb8" path="res://Assets/Bodyguard Top Down-Sheet.png" id="2_r58rf"]
 [ext_resource type="Texture2D" uid="uid://dw6upy0vku2m1" path="res://Assets/Death_Animation-Sheet.webp" id="3_avxvs"]
+[ext_resource type="Texture2D" uid="uid://dbkdbcyf4nrlj" path="res://Assets/Green_Guy_With_Parrot-Sheet.png" id="5_utkad"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vhdh5"]
 atlas = ExtResource("2_r58rf")
@@ -47,6 +48,22 @@ region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_utkad"]
 atlas = ExtResource("1_8tl16")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbeuf"]
+atlas = ExtResource("5_utkad")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4oip"]
+atlas = ExtResource("5_utkad")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tbaj"]
+atlas = ExtResource("5_utkad")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b558g"]
+atlas = ExtResource("5_utkad")
 region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vhdh5"]
@@ -98,6 +115,23 @@ animations = [{
 "loop": true,
 "name": &"walk",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbeuf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4oip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tbaj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b558g")
+}],
+"loop": true,
+"name": &"with_pet",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r58rf"]
@@ -111,7 +145,7 @@ z_index = 10
 texture_filter = 1
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_vhdh5")
-animation = &"ex"
+animation = &"with_pet"
 autoplay = "walk"
 
 [node name="Area2D" type="Area2D" parent="."]

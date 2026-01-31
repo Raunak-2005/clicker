@@ -14,25 +14,46 @@ var costoil = 20
 func _ready() -> void:
 	pass # Replace with function body.
 
-
+func play_audio():
+	$AudioStreamPlayer2D.play()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
 
 func _on_button_pressed_girl() -> void:
+	
 	pass # Replace with function body.
 
 
 func _on_button_pressed_parrot() -> void:
+	if get_parent().get_parent().get_node('.').countcr >= costparrot:
+		get_parent().get_node("Car Controller").no+=1
+		get_parent().get_parent().get_node('.').countcr -=costparrot
+		costparrot=int(costparrot*1.3)
+		button2.text = 'BUY\ncost '+str(costparrot)
+		play_audio()
 	pass # Replace with function body.
 
 
 func _on_button_pressed_stick() -> void:
+	if get_parent().get_parent().get_node('.').countcr >= coststick:
+		get_parent().get_node("Car Controller").speed*=1.05
+		get_parent().get_parent().get_node('.').countcr -=coststick
+		coststick= int(coststick*1.3)
+		button3.text = 'BUY\ncost '+str(coststick)
+		play_audio()
 	pass # Replace with function body.
 
 
 func _on_button_pressed_truck() -> void:
+	if get_parent().get_parent().get_node('.').countcr >= costtruck:
+		get_parent().get_node("Car Controller/Car").pcenttruck*=1.5
+		get_parent().get_node("Car Controller/Car").pcenttank*=1.5
+		get_parent().get_parent().get_node('.').countcr -=costtruck
+		costtruck =int(costtruck*1.8)
+		button4.text = 'BUY\ncost '+str(costtruck)
+		play_audio()
 	pass # Replace with function body.
 
 

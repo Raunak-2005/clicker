@@ -291,10 +291,10 @@ shape = SubResource("RectangleShape2D_k2pcd")
 [node name="Button" type="Button" parent="Item5"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 648.864
-offset_top = 9.69543
-offset_right = 838.864
-offset_bottom = 151.695
+offset_left = 644.725
+offset_top = 1.21193
+offset_right = 834.725
+offset_bottom = 143.212
 theme_override_fonts/font = ExtResource("2_e8ucp")
 theme_override_font_sizes/font_size = 32
 text = "BUY

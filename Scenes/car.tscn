@@ -1,26 +1,87 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpn7nbyaemmik"]
+[gd_scene load_steps=12 format=3 uid="uid://cpn7nbyaemmik"]
 
 [ext_resource type="Script" uid="uid://b1ivmsmpbenwv" path="res://Scripts/car.gd" id="1_go66d"]
 [ext_resource type="Texture2D" uid="uid://c2y4cltljl18a" path="res://Assets/New_Car.png" id="2_go66d"]
+[ext_resource type="Texture2D" uid="uid://chjnp866x6h05" path="res://Assets/Tank.png" id="3_yi23e"]
+[ext_resource type="Texture2D" uid="uid://ttv75ch25e80" path="res://Assets/Truck(2).png" id="4_u41r7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aky6y"]
+atlas = ExtResource("2_go66d")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqss3"]
+atlas = ExtResource("3_yi23e")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yi23e"]
+atlas = ExtResource("4_u41r7")
+region = Rect2(0, 48, 256, 113)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_argdw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aky6y")
+}],
+"loop": true,
+"name": &"Car",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqss3")
+}],
+"loop": true,
+"name": &"Tank",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yi23e")
+}],
+"loop": true,
+"name": &"Truck",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yi23e"]
+size = Vector2(188.456, 45.7654)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1sfmx"]
 size = Vector2(53.3615, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u41r7"]
+size = Vector2(53.368, 60.0671)
 
 [node name="Car" type="Node2D"]
 scale = Vector2(2, 2)
 script = ExtResource("1_go66d")
 
-[node name="NewCar" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(89, 22)
 scale = Vector2(4, 4)
-texture = ExtResource("2_go66d")
+sprite_frames = SubResource("SpriteFrames_argdw")
+animation = &"Tank"
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(89, 49)
 rotation = 1.5708
 scale = Vector2(2.39844, 2.79687)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2DTruck" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-11.2574, 0.000324249)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_yi23e")
+disabled = true
+
+[node name="CollisionShape2DCar" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-16.2573, 2.86044)
 shape = SubResource("RectangleShape2D_1sfmx")
+disabled = true
+
+[node name="CollisionShape2DTank" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-11.2572, -9.53674e-06)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_u41r7")
+disabled = true

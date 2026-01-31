@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://m40ipaj6nvlt"]
+[gd_scene load_steps=56 format=3 uid="uid://m40ipaj6nvlt"]
 
 [ext_resource type="Script" uid="uid://bf8d5tjfq2ujr" path="res://Scripts/game.gd" id="1_22asu"]
 [ext_resource type="Texture2D" uid="uid://cswlasv467r35" path="res://Assets/Officer Top Down-Sheet.png" id="2_fkdbe"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://ddxljc6ctssug" path="res://Assets/Cr-Sheet.png" id="4_tgy6u"]
 [ext_resource type="Texture2D" uid="uid://bac78f5qnv2gq" path="res://Assets/Clicker1 (1).png" id="5_cwurv"]
 [ext_resource type="Script" uid="uid://bspuub4fwop7y" path="res://Scripts/area_2d2.gd" id="6_mucmn"]
+[ext_resource type="Texture2D" uid="uid://pewoa8ibbeib" path="res://Assets/Car_Button2.png" id="6_tgy6u"]
 [ext_resource type="PackedScene" uid="uid://bbnwsskogybq8" path="res://Scenes/car_controller.tscn" id="7_8m3t6"]
+[ext_resource type="Texture2D" uid="uid://ov8bj5demkqu" path="res://Assets/Animation_Frame_Evil.png" id="7_81klo"]
 [ext_resource type="FontFile" uid="uid://dkjky1udawmw0" path="res://Assets/ARCADECLASSIC.TTF" id="8_ese38"]
 [ext_resource type="Texture2D" uid="uid://d0p7wky5krsbr" path="res://Assets/The Guy Hand.png" id="9_oeip8"]
 [ext_resource type="Script" uid="uid://cst6rb7na8cry" path="res://Scripts/auto_clicked!.gd" id="10_xe308"]
@@ -168,8 +170,44 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgy6u"]
+atlas = ExtResource("6_tgy6u")
+region = Rect2(14, 0, 66, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwurv"]
+atlas = ExtResource("7_81klo")
+region = Rect2(12, 0, 66, 188)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cwurv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgy6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwurv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgy6u")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_ny2ev"]
 radius = 19.7245
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_tgy6u"]
+properties/0/path = NodePath(".:speed")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:pcenttruck")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:pcenttank")
+properties/2/spawn = true
+properties/2/replication_mode = 1
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0h7mo"]
 atlas = ExtResource("15_ym3tv")
@@ -264,6 +302,10 @@ position = Vector2(-761, 181)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_4s5l7")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="2ndPlayer/car"]
+position = Vector2(179, 0)
+sprite_frames = SubResource("SpriteFrames_cwurv")
+
 [node name="Sprite2D" type="Sprite2D" parent="2ndPlayer/car"]
 z_index = -1
 position = Vector2(0.115365, 155.636)
@@ -277,6 +319,9 @@ position = Vector2(173.97, 34.9459)
 shape = SubResource("CircleShape2D_ny2ev")
 
 [node name="Car Controller" parent="." instance=ExtResource("7_8m3t6")]
+
+[node name="MultiplayerSynchronizer2" type="MultiplayerSynchronizer" parent="Car Controller"]
+replication_config = SubResource("SceneReplicationConfig_tgy6u")
 
 [node name="Count" type="Label" parent="."]
 modulate = Color(0.435192, 0.435192, 0.435192, 1)
@@ -409,6 +454,7 @@ text = "1"
 script = ExtResource("14_6uxt2")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 position = Vector2(-37, -13)
 sprite_frames = SubResource("SpriteFrames_ta5nu")
 
@@ -445,7 +491,6 @@ texture_filter = 3
 position = Vector2(575, 514.438)
 scale = Vector2(2.2865, 2.27425)
 sprite_frames = SubResource("SpriteFrames_epypp")
-animation = &"new_animation"
 autoplay = "new_animation"
 script = ExtResource("20_631el")
 
