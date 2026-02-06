@@ -63,7 +63,7 @@ texture_filter = 1
 position = Vector2(89, 22)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_argdw")
-animation = &"Car"
+animation = &"Truck"
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(89, 49)

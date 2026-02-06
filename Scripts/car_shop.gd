@@ -18,11 +18,14 @@ func play_audio():
 	$AudioStreamPlayer2D.play()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
 	pass
 
 
 func _on_button_pressed_girl() -> void:
-	
+	if get_parent().get_parent().get_node('.').countcr >= costgirl:
+		get_parent().get_node("Car Controller").rev*=-1
+		get_parent().get_parent().get_node('.').countcr -=costgirl
 	pass # Replace with function body.
 
 

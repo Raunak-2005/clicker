@@ -53,8 +53,8 @@ texture = ExtResource("3_xjw1y")
 
 [node name="Girl" type="Sprite2D" parent="Item1/Border"]
 texture_filter = 1
-position = Vector2(-0.575, -0.943)
-scale = Vector2(0.556, 0.5)
+position = Vector2(0.114989, -0.0673425)
+scale = Vector2(0.431196, 0.433433)
 texture = ExtResource("4_krss7")
 
 [node name="Label2" type="Label" parent="Item1"]
@@ -67,9 +67,8 @@ offset_right = 610.0
 offset_bottom = 133.0
 theme_override_fonts/font = ExtResource("2_e8ucp")
 theme_override_font_sizes/font_size = 32
-text = "Traffic  Girl
-Pushes the button for you 
-every 5 seconds"
+text = "U-TURN
+FLIP   DIRECTION"
 
 [node name="Area2D" type="Area2D" parent="Item1"]
 
