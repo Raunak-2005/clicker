@@ -12,6 +12,8 @@ var costoil = 20
 @onready var button5: Button = $Item5/Button
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	await(get_tree().create_timer(60).timeout)
+	play_t()
 	pass # Replace with function body.
 
 func play_audio():
@@ -20,12 +22,17 @@ func play_audio():
 func _process(delta: float) -> void:
 	
 	pass
-
+func play_t():
+	costgirl=int(get_parent().get_parent().get_node('.').maxcountcr/3)
+	button1.text='BUY\ncost '+str(costgirl)
+	
+	await(get_tree().create_timer(60).timeout)
 
 func _on_button_pressed_girl() -> void:
 	if get_parent().get_parent().get_node('.').countcr >= costgirl:
 		get_parent().get_node("Car Controller").rev*=-1
 		get_parent().get_parent().get_node('.').countcr -=costgirl
+		
 	pass # Replace with function body.
 
 

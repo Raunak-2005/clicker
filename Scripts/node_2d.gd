@@ -1,6 +1,7 @@
 extends Node2D
 var count=1000000000
 var countcr=10000000
+var maxcountcr=0
 var tt=true
 var texture
 var tl=5
@@ -26,7 +27,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
+	if countcr>maxcountcr:
+		maxcountcr=countcr
 	
 	if get_node_or_null(play)!=null:
 		
