@@ -40,7 +40,7 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.get_parent() is car:
+	if area.get_parent() is car and get_node("AnimatedSprite2D").animation!="ex":
 		is_walking= 0
 		scale*=0.33
 		#get_node("Area2D/CollisionShape2D").disabled=true
