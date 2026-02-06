@@ -1,6 +1,6 @@
 extends Node2D
-var count=0
-var countcr=0
+var count=1000000000
+var countcr=10000000
 var tt=true
 var texture
 var tl=5
@@ -62,4 +62,6 @@ func autoclick():
 	pass # Replace with function body.
 	
 func close():
-	queue_free() 
+	queue_free()
+
+	

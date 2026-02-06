@@ -34,6 +34,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 			if randf_range(0,1)>pcent:
 				var dude = guy.instantiate()
 				dude.speed=sp
+				dude.get_node("Sprite2D").visible=get_parent().get_parent().pet
 				var randx = randf_range(-250,-150)
 				var randy = randf_range(50,130)
 				
@@ -54,6 +55,9 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 				vips.get_node("Men").speed = sp
 				vips.get_node('Men2').speed = sp
 				vips.get_node('Men3').speed = sp
+				vips.get_node("Men").get_node("Sprite2D").visible=get_parent().get_parent().pet
+				vips.get_node('Men2').get_node("Sprite2D").visible=get_parent().get_parent().pet
+				vips.get_node('Men3').get_node("Sprite2D").visible=get_parent().get_parent().pet
 				var randx = randf_range(-250,-150)
 				var randy = randf_range(50,130)
 				if get_tree().root.get_node("Node2D").tt==true:
@@ -80,6 +84,7 @@ func working():
 			if randf_range(0,1)>pcent:
 				var dude = guy.instantiate()
 				dude.speed=sp
+				dude.get_node("Sprite2D").visible=get_parent().get_parent().pet
 				var randx = randf_range(-250,-150)
 				var randy = randf_range(50,130)
 				
@@ -99,6 +104,9 @@ func working():
 				vips.get_node("Men").speed = sp
 				vips.get_node('Men2').speed = sp
 				vips.get_node('Men3').speed = sp
+				vips.get_node("Men").get_node("Sprite2D").visible=get_parent().get_parent().pet
+				vips.get_node('Men2').get_node("Sprite2D").visible=get_parent().get_parent().pet
+				vips.get_node('Men3').get_node("Sprite2D").visible=get_parent().get_parent().pet
 				var randx = randf_range(-250,-150)
 				var randy = randf_range(50,130)
 				if get_tree().root.get_node("Node2D").tt==true:
@@ -119,6 +127,7 @@ func working2n(randx,randy):
 			
 		var dude = guy.instantiate()
 		dude.speed=sp
+		dude.get_node("Sprite2D").visible=get_parent().get_parent().pet
 		dude.position = Vector2(randx,randy)
 		dude.z_index = 100
 		add_child(dude)
@@ -130,6 +139,9 @@ func working2v(randx,randy):
 		vips.get_node("Men").speed = sp
 		vips.get_node('Men2').speed = sp
 		vips.get_node('Men3').speed = sp
+		vips.get_node("Men").get_node("Sprite2D").visible=get_parent().get_parent().pet
+		vips.get_node('Men2').get_node("Sprite2D").visible=get_parent().get_parent().pet
+		vips.get_node('Men3').get_node("Sprite2D").visible=get_parent().get_parent().pet
 		vips.position = Vector2(randx,randy)
 		vips.z_index = 100
 		add_child(vips)

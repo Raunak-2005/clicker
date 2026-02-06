@@ -54,6 +54,7 @@ size = Vector2(53.3615, 20)
 size = Vector2(53.368, 60.0671)
 
 [node name="Car" type="Node2D"]
+z_index = 69
 scale = Vector2(2, 2)
 script = ExtResource("1_go66d")
 
@@ -62,7 +63,7 @@ texture_filter = 1
 position = Vector2(89, 22)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_argdw")
-animation = &"Tank"
+animation = &"Car"
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(89, 49)
@@ -71,7 +72,6 @@ scale = Vector2(2.39844, 2.79687)
 
 [node name="CollisionShape2DTruck" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-11.2574, 0.000324249)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_yi23e")
 disabled = true
 
@@ -82,6 +82,8 @@ disabled = true
 
 [node name="CollisionShape2DTank" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-11.2572, -9.53674e-06)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_u41r7")
 disabled = true
+
+[node name="TrailPoint" type="Node2D" parent="."]
+position = Vector2(80, 71.5)

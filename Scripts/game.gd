@@ -1,6 +1,7 @@
 extends Node2D
-
-
+var multiplierparr=1
+var pet=0
+var pcenttra=0
 # Called when the node enters the scene tree for the first time.
 func _enter_tree() -> void:
 	multiplayer.peer_connected.connect(check)

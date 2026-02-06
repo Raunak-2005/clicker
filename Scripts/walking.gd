@@ -1,4 +1,5 @@
 extends Node2D
+class_name men
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 var is_walking = false
@@ -8,7 +9,9 @@ var check
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	walk_start()
 	
+	 
 	pass # Replace with function body.
 
 func walk_start():
@@ -49,7 +52,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if get_node("AnimatedSprite2D").animation=="ex":
-		get_tree().root.get_node("Node2D").countcr+=1
+		get_tree().root.get_node("Node2D").countcr+=1*get_tree().root.get_node("Node2D/Game").multiplierparr
 		queue_free()
 	
 	pass # Replace with function body.

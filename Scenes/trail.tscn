@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://jc5i3v7qnbnt"]
+
+[ext_resource type="Script" uid="uid://bor8pmortaiin" path="res://Scripts/trail.gd" id="1_7aotc"]
+[ext_resource type="Texture2D" uid="uid://0bid3qddq54v" path="res://Assets/Oil_track.png" id="2_0bshk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7aotc"]
+size = Vector2(11.0002, 32)
+
+[node name="Trail" type="Node2D"]
+z_index = 67
+position = Vector2(-1, 1)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_7aotc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(0, 1598)
+scale = Vector2(10, 100)
+texture = ExtResource("2_0bshk")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 1618)
+scale = Vector2(10, 100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.627206, -0.2)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_7aotc")
+
+[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]
+[connection signal="area_shape_exited" from="Area2D" to="." method="_on_area_2d_area_shape_exited"]
