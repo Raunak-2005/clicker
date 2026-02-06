@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bcryf3u1pl1nf" path="res://Assets/Green Guy-Sheet.png" id="1_8tl16"]
 [ext_resource type="Script" uid="uid://cts3im73pum7o" path="res://Scripts/walking.gd" id="2_4oc5y"]
 [ext_resource type="Texture2D" uid="uid://c80na3aaljwb8" path="res://Assets/Bodyguard Top Down-Sheet.png" id="2_r58rf"]
-[ext_resource type="Texture2D" uid="uid://dw6upy0vku2m1" path="res://Assets/Death_Animation-Sheet.webp" id="3_avxvs"]
+[ext_resource type="Texture2D" uid="uid://b2x0ohytforp2" path="res://Assets/Death Animation-Sheet.png" id="3_vhdh5"]
 [ext_resource type="Texture2D" uid="uid://dbkdbcyf4nrlj" path="res://Assets/Green_Guy_With_Parrot-Sheet.png" id="5_utkad"]
 [ext_resource type="Texture2D" uid="uid://blv0kwfdgkgkl" path="res://Assets/Parrot.png" id="6_vhdh5"]
 
@@ -24,15 +24,15 @@ atlas = ExtResource("2_r58rf")
 region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rl23i"]
-atlas = ExtResource("3_avxvs")
+atlas = ExtResource("3_vhdh5")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hwoqi"]
-atlas = ExtResource("3_avxvs")
+atlas = ExtResource("3_vhdh5")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nhx20"]
-atlas = ExtResource("3_avxvs")
+atlas = ExtResource("3_vhdh5")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4oc5y"]
@@ -146,7 +146,7 @@ z_index = 10
 texture_filter = 1
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_vhdh5")
-animation = &"with_pet"
+animation = &"ex"
 autoplay = "walk"
 
 [node name="Area2D" type="Area2D" parent="."]
