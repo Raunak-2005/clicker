@@ -18,19 +18,23 @@ offset_bottom = 345.0
 script = ExtResource("1_051uo")
 
 [node name="Button" type="Button" parent="Panel"]
+visible = false
 layout_mode = 0
 offset_left = 177.0
 offset_top = 47.0
 offset_right = 308.0
 offset_bottom = 105.0
+disabled = true
 text = "Host"
 
 [node name="Button2" type="Button" parent="Panel"]
+visible = false
 layout_mode = 0
 offset_left = 176.0
 offset_top = 162.0
 offset_right = 310.0
 offset_bottom = 215.0
+disabled = true
 text = "Connect"
 
 [node name="Camera2D" type="Camera2D" parent="Panel"]

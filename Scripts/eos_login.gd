@@ -3,7 +3,8 @@ extends Control
 @onready var display = $MessageDisplay
 @onready var back_button = $Button
 @onready var peer: EOSGMultiplayerPeer = EOSGMultiplayerPeer.new()
-
+var player1=false 
+var player2=false  
 @export var game_scene: PackedScene
 
 var local_user_id = ""
@@ -18,7 +19,8 @@ var CLIENT_SECRET ="smT063MF4Zytxf8wwkkc72l/Ni6BeqiKmssic/fWEvI"#Replace EosCred
 var ENCRYPTION_KEY="1278127318273473647584756463264874895952345234234235236357356467"
 var local_lobby: HLobby
 
-func lready() -> void:
+func _ready() -> void:
+	
 	display.text = "Starting"
 	
 	#Initialize the SDK
@@ -88,6 +90,11 @@ func _exit_tree() -> void:
 	exit_game()
 		
 func findMatch():
+	player1=true
+	$Button2.disabled=true
+	$Button2.visible=false 
+	$Button3.disabled=true 
+	$Button3.visible=false  
 	display.text = "Successful login"
 	await get_tree().create_timer(1.0).timeout
 	if not await search_lobbies():
@@ -137,6 +144,10 @@ func create_lobby():
 #LOBBY JOIN CODE
 #---------------------------------------#
 func search_lobbies() -> bool:
+	player2=true
+	$Button3.disabled=true 
+	$Button3.visible=false 
+	
 	# Search for public lobbies
 	var lobbies = await HLobbies.search_by_bucket_id_async("Press_Cross")
 	if not lobbies:
@@ -184,6 +195,8 @@ func _on_peer_disconnected(peer_id: int) -> void:
 
 @rpc("any_peer", "call_local", "reliable")
 func start_game() -> void:
+	$Button2.disabled=true
+	$Button2.visible=false 
 	print("Game Started\n-------------")
 	var game_instance = game_scene.instantiate()
 	game_instance.name="Node2D"
