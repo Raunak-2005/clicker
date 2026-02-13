@@ -14,6 +14,7 @@ var play="Game"
 # Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:
+	 
 	texture="AnimatedSprite2D2"
 	multiplayer.server_disconnected.connect(close)
 	#if get_node("2ndPlayer/CameraCar") != null:
