@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
-	MultiplayerManager1.create_server()
+	#MultiplayerManager1.create_server()
 	startedserver.emit()
 	$Camera2D.enabled=false 
 	get_tree().root.get_node("Node2D/MainCamera").enabled=true
@@ -22,7 +22,7 @@ func _on_button_pressed() -> void:
 
 
 func _on_button_2_pressed() -> void:
-	MultiplayerManager1.create_client($"../LineEdit".text)
+	#MultiplayerManager1.create_client($"../LineEdit".text)
 	startedclient.emit()
 	$Camera2D.enabled=false 
 	get_tree().root.get_node("Node2D/CameraCar").enabled=true

@@ -46,8 +46,12 @@ func cartt():
 				carr.scalel=2
 			if rando<= pcenttruck:
 				carr.position.y-=250
+				if rev==1:
+					carr.position.y+=350
 			elif rando<=pcenttank and rando > pcenttruck:	
 				carr.position.y-=100
+				if rev==1:
+					carr.position.y+=120
 			add_child(carr)
 			if rando<= pcenttruck:
 				carr.get_node('AnimatedSprite2D').play("Truck")
@@ -87,8 +91,12 @@ func carre(randx,randy,rando,speed,pcenttruck,pcenttank,pcenttrack,rng,rev):
 		carr.scalel=2
 	if rando<= pcenttruck:
 		carr.position.y-=250
+		if rev==1:
+					carr.position.y+=350
 	elif rando<=pcenttank and rando > pcenttruck:	
 		carr.position.y-=100
+		if rev==1:
+					carr.position.y+=120
 	add_child(carr)
 	if rando<= pcenttruck:
 		carr.get_node('AnimatedSprite2D').play("Truck")

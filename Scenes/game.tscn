@@ -515,13 +515,13 @@ stream = ExtResource("25_tt7mg")
 [node name="CarShop" parent="." instance=ExtResource("26_fkdbe")]
 position = Vector2(-2069, 0)
 
-[connection signal="input_event" from="2ndPlayer/car/Area2D" to="2ndPlayer/car/Area2D" method="_on_input_event"]
 [connection signal="input_event" from="2ndPlayer/car/Area2D" to="2ndPlayer/car/Area2D" method="_on_input_event2"]
+[connection signal="input_event" from="2ndPlayer/car/Area2D" to="2ndPlayer/car/Area2D" method="_on_input_event"]
 [connection signal="pressed" from="Close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="CarClose" to="." method="_on_car_close_pressed"]
 [connection signal="pressed" from="ShopButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CarShopButton" to="." method="_on_car_shop_button_pressed"]
-[connection signal="input_event" from="AnimatedSprite2D/Area2D" to="AnimatedSprite2D/Area2D" method="_on_input_event"]
 [connection signal="input_event" from="AnimatedSprite2D/Area2D" to="AnimatedSprite2D/Area2D" method="_on_input_eventrpc"]
+[connection signal="input_event" from="AnimatedSprite2D/Area2D" to="AnimatedSprite2D/Area2D" method="_on_input_event"]
 
 [editable path="Shop"]

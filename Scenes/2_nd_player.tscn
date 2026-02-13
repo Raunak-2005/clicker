@@ -180,5 +180,5 @@ replication_config = SubResource("SceneReplicationConfig_uh8xd")
 visibility_update_mode = 1
 script = ExtResource("5_q0ihb")
 
-[connection signal="input_event" from="car/Area2D" to="car/Area2D" method="_on_input_event"]
 [connection signal="input_event" from="car/Area2D" to="car/Area2D" method="_on_input_event2"]
+[connection signal="input_event" from="car/Area2D" to="car/Area2D" method="_on_input_event"]

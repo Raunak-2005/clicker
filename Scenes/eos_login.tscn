@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb8ou54p0slxk"]
+
+[ext_resource type="Script" uid="uid://stkhjnc0x7i2" path="res://Scripts/eos_login.gd" id="1_ibxkx"]
+[ext_resource type="PackedScene" uid="uid://0kgd4s5iyrq5" path="res://Scenes/node_2d.tscn" id="2_2mllj"]
+
+[node name="EOS Login" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ibxkx")
+game_scene = ExtResource("2_2mllj")
+
+[node name="MessageDisplay" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 8.0
+offset_right = 125.0
+offset_bottom = 40.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 193.0
+offset_right = 140.0
+offset_bottom = 228.0
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 264.0
+offset_right = 178.0
+offset_bottom = 317.0
+
+[connection signal="pressed" from="Button" to="." method="lready"]
+[connection signal="pressed" from="Button2" to="." method="search_lobbies"]
+[connection signal="pressed" from="Button3" to="." method="findMatch"]

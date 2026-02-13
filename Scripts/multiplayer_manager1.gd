@@ -1,6 +1,5 @@
 extends Node
-const SERVER_PORT:int =8080 
-
+const SERVER_PORT:int =8080  
 # Called when the node enters the scene tree for the first time.
 func create_server() :
 	var enet_network_peer :ENetMultiplayerPeer=ENetMultiplayerPeer.new()
