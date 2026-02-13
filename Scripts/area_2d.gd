@@ -23,7 +23,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	pass
-@rpc("any_peer","call_local")	
+
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if (Input.is_action_just_pressed("ui_Mouse_left_Click") && (get_parent().get_parent().get_node("Timer").t.time_left==0 || to)):
 		get_parent().animation="default"

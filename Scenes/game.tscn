@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://m40ipaj6nvlt"]
+[gd_scene load_steps=55 format=3 uid="uid://m40ipaj6nvlt"]
 
 [ext_resource type="Script" uid="uid://bf8d5tjfq2ujr" path="res://Scripts/game.gd" id="1_22asu"]
 [ext_resource type="Texture2D" uid="uid://cswlasv467r35" path="res://Assets/Officer Top Down-Sheet.png" id="2_fkdbe"]
@@ -52,15 +52,9 @@ animations = [{
 }]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ny2ev"]
-properties/0/path = NodePath("2ndPlayer/car/Area2D:position")
+properties/0/path = NodePath("AnimatedSprite2D/Area2D:sp")
 properties/0/spawn = true
 properties/0/replication_mode = 1
-properties/1/path = NodePath("AnimatedSprite2D/Area2D:position")
-properties/1/spawn = true
-properties/1/replication_mode = 1
-properties/2/path = NodePath("AnimatedSprite2D/Area2D:sp")
-properties/2/spawn = true
-properties/2/replication_mode = 1
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ny2ev"]
 atlas = ExtResource("4_tgy6u")
@@ -198,17 +192,6 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ny2ev"]
 radius = 19.7245
 
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_tgy6u"]
-properties/0/path = NodePath(".:speed")
-properties/0/spawn = true
-properties/0/replication_mode = 1
-properties/1/path = NodePath(".:pcenttruck")
-properties/1/spawn = true
-properties/1/replication_mode = 1
-properties/2/path = NodePath(".:pcenttank")
-properties/2/spawn = true
-properties/2/replication_mode = 1
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_0h7mo"]
 atlas = ExtResource("15_ym3tv")
 region = Rect2(0, 0, 32, 32)
@@ -319,9 +302,6 @@ position = Vector2(173.97, 34.9459)
 shape = SubResource("CircleShape2D_ny2ev")
 
 [node name="Car Controller" parent="." instance=ExtResource("7_8m3t6")]
-
-[node name="MultiplayerSynchronizer2" type="MultiplayerSynchronizer" parent="Car Controller"]
-replication_config = SubResource("SceneReplicationConfig_tgy6u")
 
 [node name="Count" type="Label" parent="."]
 modulate = Color(0.435192, 0.435192, 0.435192, 1)
